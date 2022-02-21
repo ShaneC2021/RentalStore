@@ -6,10 +6,10 @@ import Col from "react-bootstrap/Col";
 
 function Contact() {
   return (
-    <div className="p-3">
-      <div className="contact-details p-2">
+    <div className="main-body">
+      <div className="contact-details p-2 main-body">
         <Form>
-          <Row className="mb-3">
+          <Row className="mb-0">
             <Form.Group as={Col} controlId="firstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control type="text" placeholder="First Name" required />

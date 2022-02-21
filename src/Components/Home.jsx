@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
       <div className="background-logo"></div>
-      <Footer />
+      
     </>
   );
 }

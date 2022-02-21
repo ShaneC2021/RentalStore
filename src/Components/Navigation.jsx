@@ -1,24 +1,23 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import {Navbar, NavDropdown, Container, Nav} from "react-bootstrap";
 import {LinkContainer} from 'react-router-bootstrap';
 import { Routes, Route, Link } from "react-router-dom";
 
 function Navigation() {
   return (
-    <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
+    <Container fluid className="nav-height m-0 p-0">
+    <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark" className="nav-height">
       <Container>
         <Navbar.Brand>
-          <Link to="/">
+          <LinkContainer to="/"><Nav.Link>
             <img
               src={require("../images/campervan.jpg")}
               width="75"
               height="75"
               className="d-inline-block align-top logo img-responsive"
             />
-          </Link>
+            </Nav.Link>
+          </LinkContainer>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -33,7 +32,7 @@ function Navigation() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <LinkContainer to="/"><Nav.Link>Our Fleet</Nav.Link></LinkContainer>
+            <LinkContainer to="/Fleet"><Nav.Link>Our Fleet</Nav.Link></LinkContainer>
             
               <LinkContainer to="/Contact"><Nav.Link>Contact Us</Nav.Link></LinkContainer>
             
@@ -41,6 +40,7 @@ function Navigation() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </Container>
   );
 }
 export default Navigation;
