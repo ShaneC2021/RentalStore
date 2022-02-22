@@ -72,6 +72,8 @@ div h6 {
 }
 .app-height {
   min-height: 100vh;
+}
 
-  background-color:green;
+.about {
+  max-width: 75vw;
 }
