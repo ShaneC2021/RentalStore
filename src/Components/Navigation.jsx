@@ -22,6 +22,7 @@ function Navigation() {
                   width="75"
                   height="75"
                   className="d-inline-block align-top logo img-responsive"
+                  alt="camper van with surfboard on the side"
                 />
               </Nav.Link>
             </LinkContainer>
@@ -34,8 +35,8 @@ function Navigation() {
                 <Nav.Link className="features">About</Nav.Link>
               </LinkContainer>
               <Nav.Link className="pricing">Pricing</Nav.Link>
-               <Nav.Link>Rent A Van</Nav.Link>
-              </Nav>
+              <Nav.Link>Rent A Van</Nav.Link>
+            </Nav>
             <Nav>
               <LinkContainer to="/Fleet">
                 <Nav.Link>Our Fleet</Nav.Link>

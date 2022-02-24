@@ -5,10 +5,10 @@ import { Instagram } from "react-bootstrap-icons";
 
 function Footer() {
   return (
-    <div className="footer d-flex justify-content-between p-2">
+    <div className="footer d-flex justify-content-around p-2">
       <div>
         <h6>Follow Us On</h6>
-        <span className=" d-flex flex-column justify-content-between">
+        <span className=" d-flex flex-column justify-content-between align-items-center">
           <Twitter />
           <Facebook />
           <Instagram />
@@ -16,7 +16,7 @@ function Footer() {
       </div>
       <div>
         <h6>Customer Assistance</h6>
-        <span>
+        <div className="d-flex flex-column align-items-center">
           <p className="m-0">
             Tel: <a href="tel:123-456-7890">123-456-7890</a>
           </p>
@@ -30,7 +30,7 @@ function Footer() {
           <p className="m-0">
             Fax: <a href="tel:123-456-7890">123-456-7890</a>
           </p>
-        </span>
+        </div>
       </div>
       <div>
         <h6>Resources</h6>
