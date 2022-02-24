@@ -1,10 +1,10 @@
 import React from "react";
-import Navigation from "./Components/Navigation";
-import Contact from "./Components/Contact";
-import Home from "./Components/Home";
-import Fleet from "./Components/Fleet";
-import Footer from "./Components/Footer";
-import About from "./Components/About";
+import Navigation from "./components/Navigation";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import Fleet from "./pages/Fleet";
+import Footer from "./components/Footer";
+import About from "./pages/About";
 import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
