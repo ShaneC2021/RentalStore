@@ -16,7 +16,7 @@ const [array, setArray] = useState(arrayOfVans)
       <Row xs={1} md={2} lg={4} className="g-3">
         {array.map((item, idx) => (
           <Col key={idx}>
-        <VehicleCard data={item} />
+        <VehicleCard {...item} />
           </Col>
         ))}
       </Row>
