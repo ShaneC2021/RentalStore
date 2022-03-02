@@ -27,7 +27,7 @@ function Contact() {
   };
 
   return (
-    <div className=" main-body p-1 d-flex flex-column align-items-center justify-content-center">
+    <div className="main-body p-1 d-flex flex-column align-items-center justify-content-center">
       <div className="contact-details p-2">
         <Form onSubmit={handleSubmit}>
           <Row className="mb-0">
@@ -37,6 +37,7 @@ function Contact() {
               onChange={handleChange}
               value={values.firstName}
               name="firstName"
+              required
             />
 
             <FormField
@@ -51,61 +52,39 @@ function Contact() {
           <Row>
             <FormField
               field="Email"
-              type="text"
+              type="email"
               onChange={handleChange}
               value={values.email}
               name="email"
+              required
             />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
+            <p className="text-muted">We'll never share your email with anyone else</p>
+
           </Row>
 
           <Row>
-
-
-          <FormField
-              field="phoneNumber"
+            <FormField
+              field="Phone Number ex: 1-123-456-7890"
               type="tel"
               onChange={handleChange}
               pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
               value={values.phone}
               name="phone"
             />
-          
-
-
-
-
-
-            <Form.Group as={Col} controlId="phoneNumber">
-              <Form.Label>Phone Number ex: 1-123-456-789</Form.Label>
-              <Form.Control
-                type="tel"
-                placeholder="Phone Number"
-                pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                value={values.phone}
-                onChange={handleChange}
-                name="phone"
-                required
-              />
-            </Form.Group>
           </Row>
 
           <Row>
-            <Form.Group className="mb-3" controlId="message">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                value={values.message}
-                onChange={handleChange}
-                name="message"
-                required
-              />
-            </Form.Group>
+            <FormField
+              as="textarea"
+              rows={3}
+              onChange={handleChange}
+              value={values.message}
+              name="message"
+        
+            />
           </Row>
-          <div className="d-grid">
+
+          <div className="d-grid p-3">
             <Button variant="dark" type="submit" size="lg">
               Send
             </Button>
@@ -117,21 +96,3 @@ function Contact() {
 }
 
 export default Contact;
-
-/*
-
-
-            <Form.Group as={Col} controlId="firstName">
-             
-<Form.Label>First Name</Form.Label>
-               
-
-               <Form.Control
-                 type="text"
-                 placeholder="First Name"
-                 value={values.firstName}
-                 onChange={handleChange}
-                 name="firstName"
-                 required
-               />
-             </Form.Group>  */
