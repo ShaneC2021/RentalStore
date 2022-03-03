@@ -30,7 +30,7 @@ function Contact() {
     <div className="main-body p-1 d-flex flex-column align-items-center justify-content-center">
       <div className="contact-details p-2">
         <Form onSubmit={handleSubmit}>
-          <Row className="mb-0">
+          <Row>
             <FormField
               field="First Name"
               type="text"
