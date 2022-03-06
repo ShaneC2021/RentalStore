@@ -8,20 +8,22 @@ import VehicleCard from "../components/VehicleCard";
 
 
 function Fleet() {
-  
-const [array, setArray] = useState(arrayOfVans)
+  const [array] = useState(arrayOfVans)  //initalize array with imported van info
 
   return (
     <div className="main-body-fleet">
       <Row xs={1} md={2} lg={4} className="g-3">
         {array.map((item, idx) => (
+      
           <Col key={idx}>
-        <VehicleCard {...item} />
+            <VehicleCard obj={item} reply="showbutton" />
           </Col>
+        
         ))}
       </Row>
     </div>
   );
+
 }
 
 export default Fleet;

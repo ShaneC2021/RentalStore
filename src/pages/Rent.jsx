@@ -1,21 +1,14 @@
 import { React, useState } from "react";
 import { Card, Form, Row, Button, Col } from "react-bootstrap";
 import FormField from "../components/FormField";
-import {Link, useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import VehicleCard from "../components/VehicleCard";
 
-
-
-
-
-function Rent(props) {
-
+function Rent() {
   const location = useLocation();
-
-
-let image = location.state.image.image;
-console.log(image);
+  let item = location.state.vcard.vehicle;
+  console.log(item);
  
-
   const initialValues = {
     firstName: "",
     lastName: "",
@@ -36,22 +29,14 @@ console.log(image);
 
   return (
     <div className="main-body">
-      <Row>
-        <Col xs={12} sm={12} md={5} lg={5}>
+      <Row className="m-0 p-0">
+        <Col xs={12} sm={12} md={3} lg={3} className="m-0 p-0">
           <div>
-            <Card>
-              <Card.Img
-                variant="top"
-                width="243"
-                height="160"
-                src={require(`../images/${image}`)}
-                alt="pic of van"
-              />
-            </Card>
+           <VehicleCard obj={item}/>
           </div>
         </Col>
-        <Col xs={12} sm={12} md={7} lg={7}>
-          <div className="rent-border p-2">
+        <Col xs={12} sm={12} md={9} lg={9} className="m-0 p-0" >
+          <div className=" p-2 ">
             <Form onSubmit={handleSubmit}>
               <Row>
                 <Col xs={12} sm={12} lg={3}>
@@ -106,12 +91,13 @@ console.log(image);
                   value={values.age}
                   name="age"
                 />
-              </Row>
-
-              <Row>
+              
+               </Row>
+               <Row>
+              
                 <Col>
                   <div className="d-grid gap-2 p-2">
-                    <Button variant="dark" size="lg">
+                    <Button variant="dark" size="md">
                       Next
                     </Button>
                   </div>
@@ -126,3 +112,14 @@ console.log(image);
 }
 
 export default Rent;
+
+
+/*<Card>
+<Card.Img
+  variant="top"
+  width="243"
+  height="160"
+  src={require(`../images/${image}`)}
+  alt="pic of van"
+/>
+</Card> */

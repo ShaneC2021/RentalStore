@@ -1,44 +1,38 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
-import {useLocation} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import {Link} from 'react-router-dom'
+function VehicleCard(props) {
+  const vehicle = props.obj;
+  const reply = props.reply;
+  
+  console.log(vehicle);
 
-
-function VehicleCard({ image, name, description, price }) {
-const location = useLocation();
-
-
-
-  console.log(location);
   return (
     <Card>
       <Card.Img
         variant="top"
         width="243"
         height="160"
-        src={require(`../images/${image}`)}
+        src={require(`../images/${vehicle.image}`)}
         alt="pic of van"
       />
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title>{vehicle.name}</Card.Title>
         <Card.Text>
-          {description}
+          {vehicle.description}
           <br />
-          {price}
+          {vehicle.price}
         </Card.Text>
-        <Link  to="/Rent" state={{image:{image}}}> 
-          <Button variant="primary">Rent Me</Button>
-        </Link>
-          
-        
+
+        {reply === "showbutton" ? (
+          <Link to="/Rent" state={{ vcard: { vehicle } }}>
+            <Button variant="primary">Rent Me</Button>
+          </Link>
+        ) : null}
       </Card.Body>
     </Card>
   );
 }
 
 export default VehicleCard;
-
-           
-          

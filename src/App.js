@@ -6,12 +6,11 @@ import Fleet from "./pages/Fleet";
 import Footer from "./components/Footer";
 import About from "./pages/About";
 import Rent from "./pages/Rent";
-import { Routes, Route,} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="app-height">
-      
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />  
@@ -21,10 +20,8 @@ function App() {
         <Route path="/Rent" element={<Rent />}  />
       </Routes>
       <Footer />
-      
     </div>
   );
 }
-
 
 export default App;
