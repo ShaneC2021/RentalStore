@@ -1,7 +1,17 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import {useLocation} from 'react-router-dom';
 
-function VehicleCard ({image,name,description,price}) {
+import {Link} from 'react-router-dom'
+
+
+function VehicleCard({ image, name, description, price }) {
+const location = useLocation();
+
+
+
+  console.log(location);
   return (
     <Card>
       <Card.Img
@@ -18,10 +28,17 @@ function VehicleCard ({image,name,description,price}) {
           <br />
           {price}
         </Card.Text>
-        <Button variant="primary">Rent Me</Button>
+        <Link  to="/Rent" state={{image:{image}}}> 
+          <Button variant="primary">Rent Me</Button>
+        </Link>
+          
+        
       </Card.Body>
     </Card>
   );
 }
 
 export default VehicleCard;
+
+           
+          

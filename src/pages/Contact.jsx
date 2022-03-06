@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import FormField from "../components/FormField";
 
 function Contact() {
@@ -14,8 +13,6 @@ function Contact() {
     message: "",
   };
   const [values, setValues] = useState(initialValues);
-
-  console.log(values);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
