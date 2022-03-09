@@ -3,7 +3,6 @@ import Navigation from "./components/Navigation";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Fleet from "./pages/Fleet";
-import Footer from "./components/Footer";
 import About from "./pages/About";
 import Rent from "./pages/Rent";
 import { Routes, Route } from "react-router-dom";
