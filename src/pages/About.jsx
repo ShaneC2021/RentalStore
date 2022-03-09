@@ -1,7 +1,8 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 function About() {
-  return (
+  return (<>
     <div className="main-body d-flex flex-column align-items-center justify-content-center text-center p-2 ">
       <div className="contact-details about">
       <div><h2>About Us</h2></div>
@@ -17,6 +18,8 @@ function About() {
       </div>
     </div>
     </div>
+    <Footer />
+    </>
   );
 }
 

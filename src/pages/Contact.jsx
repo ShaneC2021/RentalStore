@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import FormField from "../components/FormField";
+import Footer from "../components/Footer";
 
 function Contact() {
   const initialValues = {
@@ -23,7 +24,7 @@ function Contact() {
     e.preventDefault();
   };
 
-  return (
+  return (<>
     <div className="main-body p-1 d-flex flex-column align-items-center justify-content-center">
       <div className="contact-details p-2">
         <Form onSubmit={handleSubmit}>
@@ -88,7 +89,10 @@ function Contact() {
           </div>
         </Form>
       </div>
+      
     </div>
+    <Footer/>
+    </>
   );
 }
 

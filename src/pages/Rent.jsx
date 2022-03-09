@@ -3,11 +3,12 @@ import { Card, Form, Row, Button, Col } from "react-bootstrap";
 import FormField from "../components/FormField";
 import { useLocation } from "react-router-dom";
 import VehicleCard from "../components/VehicleCard";
+import Footer from "../components/Footer";
 
 function Rent() {
   const location = useLocation();
   let item = location.state.vcard.vehicle;
- 
+
   const initialValues = {
     firstName: "",
     lastName: "",
@@ -26,15 +27,15 @@ function Rent() {
     e.preventDefault();
   };
 
-  return (
+  return (<>
     <div className="main-body">
       <Row className="m-0 p-0">
         <Col xs={12} sm={12} md={3} lg={3} className="m-0 p-0">
           <div>
-           <VehicleCard obj={item}/>
+            <VehicleCard obj={item} />
           </div>
         </Col>
-        <Col xs={12} sm={12} md={9} lg={9} className="m-0 p-0" >
+        <Col xs={12} sm={12} md={9} lg={9} className="m-0 p-0">
           <div className=" p-2 ">
             <Form onSubmit={handleSubmit}>
               <Row>
@@ -90,10 +91,8 @@ function Rent() {
                   value={values.age}
                   name="age"
                 />
-              
-               </Row>
-               <Row>
-              
+              </Row>
+              <Row>
                 <Col>
                   <div className="d-grid gap-2 p-2">
                     <Button variant="dark" size="md">
@@ -107,11 +106,11 @@ function Rent() {
         </Col>
       </Row>
     </div>
+    <Footer /></>
   );
 }
 
 export default Rent;
-
 
 /*<Card>
 <Card.Img

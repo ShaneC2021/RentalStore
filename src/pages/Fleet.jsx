@@ -3,6 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import arrayOfVans from "../scripts/data";
 import {useState} from 'react';
 import VehicleCard from "../components/VehicleCard";
+import Footer from "../components/Footer";
 
 
 
@@ -10,7 +11,7 @@ import VehicleCard from "../components/VehicleCard";
 function Fleet() {
   const [array] = useState(arrayOfVans)  //initalize array with imported van info
 
-  return (
+  return (<>
     <div className="main-body-fleet">
       <Row xs={1} md={2} lg={4} className="g-3">
         {array.map((item, idx) => (
@@ -22,6 +23,7 @@ function Fleet() {
         ))}
       </Row>
     </div>
+    <Footer /> </>
   );
 
 }
