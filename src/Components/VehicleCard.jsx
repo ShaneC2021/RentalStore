@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 function VehicleCard(props) {
   const vehicle = props.obj;
   const reply = props.reply;
-  
-  console.log(vehicle);
 
   return (
     <Card>

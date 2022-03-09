@@ -7,7 +7,6 @@ import VehicleCard from "../components/VehicleCard";
 function Rent() {
   const location = useLocation();
   let item = location.state.vcard.vehicle;
-  console.log(item);
  
   const initialValues = {
     firstName: "",

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, NavDropdown, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 
@@ -32,10 +32,8 @@ function Navigation() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto p-0">
               <LinkContainer to="/About">
-                <Nav.Link className="features">About</Nav.Link>
+                <Nav.Link className="features">About Us</Nav.Link>
               </LinkContainer>
-              <Nav.Link className="pricing">Pricing</Nav.Link>
-              <Nav.Link>Rent A Van</Nav.Link>
             </Nav>
             <Nav>
               <LinkContainer to="/Fleet">
