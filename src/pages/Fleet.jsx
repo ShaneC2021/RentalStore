@@ -17,7 +17,7 @@ function Fleet() {
         {array.map((item, idx) => (
       
           <Col key={idx}>
-            <VehicleCard obj={item} reply="showbutton" />
+            <VehicleCard obj={item} showButton={true} />
           </Col>
         
         ))}

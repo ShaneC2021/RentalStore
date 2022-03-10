@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Fleet from "./pages/Fleet";
 import About from "./pages/About";
 import Rent from "./pages/Rent";
+import RentPagetwo from "./pages/RentPagetwo";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -12,11 +13,13 @@ function App() {
     <div className="app-height">
       <Navigation />
       <Routes>
+        <Route index element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="Contact" element={<Contact />} />
         <Route path="About" element={<About />} />
         <Route path="Fleet" element={<Fleet />} />
         <Route path="Rent" element={<Rent />} />
+        <Route path="RentPagetwo" element={<RentPagetwo />} />
       </Routes>
     </div>
   );

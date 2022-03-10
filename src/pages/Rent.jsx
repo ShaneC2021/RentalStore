@@ -1,7 +1,8 @@
 import { React, useState } from "react";
-import { Card, Form, Row, Button, Col } from "react-bootstrap";
+import { Card, Row, Button, Col } from "react-bootstrap";
+import  Form  from "react-bootstrap/Form";
 import FormField from "../components/FormField";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import VehicleCard from "../components/VehicleCard";
 import Footer from "../components/Footer";
 
@@ -12,9 +13,9 @@ function Rent() {
   const initialValues = {
     firstName: "",
     lastName: "",
-    email: "",
-    phone: "",
-    message: "",
+    pickupDate:"",
+    dropOffDate: "",
+    age:"",
   };
   const [values, setValues] = useState(initialValues);
 
@@ -26,6 +27,11 @@ function Rent() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+   console.log(values);
+
+   // need to have error handling for impossible dates
+   // need to caculate number of days being rented based on user input
+   // need to have next button hidden untill all relevant info has been inputted
 
   return (<>
     <div className="main-body">
@@ -47,6 +53,7 @@ function Rent() {
                     type="date"
                     name="pickupDate"
                     size="sm"
+                    onChange={handleChange}
                     required
                   />
                 </Col>
@@ -57,8 +64,9 @@ function Rent() {
                 <Col xs={12} sm={12} lg={3}>
                   <Form.Control
                     type="date"
-                    name="dropoffDate"
+                    name="dropOffDate"
                     size="sm"
+                    onChange={handleChange}
                     required
                   />
                 </Col>
@@ -89,15 +97,19 @@ function Rent() {
                   type="number"
                   onChange={handleChange}
                   value={values.age}
+                  min="25"
                   name="age"
+                  
                 />
               </Row>
               <Row>
                 <Col>
                   <div className="d-grid gap-2 p-2">
-                    <Button variant="dark" size="md">
+                    <Link to ="/RentPagetwo" state= {{customer: {values} }}>
+                    <Button variant="dark" size="md" >
                       Next
                     </Button>
+                    </Link>
                   </div>
                 </Col>
               </Row>
@@ -112,12 +124,3 @@ function Rent() {
 
 export default Rent;
 
-/*<Card>
-<Card.Img
-  variant="top"
-  width="243"
-  height="160"
-  src={require(`../images/${image}`)}
-  alt="pic of van"
-/>
-</Card> */

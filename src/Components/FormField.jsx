@@ -17,6 +17,8 @@ function FormField(props) {
                 onChange={props.onChange}
                 value={props.value} 
                 pattern={props.pattern}
+                min={props.min}
+                max={props.max}
                 required
               />
               

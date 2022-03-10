@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 function VehicleCard(props) {
   const vehicle = props.obj;
-  const reply = props.reply;
 
   return (
     <Card>
@@ -23,7 +22,7 @@ function VehicleCard(props) {
           {vehicle.price}
         </Card.Text>
 
-        {reply === "showbutton" ? (
+        {props.showButton? (
           <Link to="/Rent" state={{ vcard: { vehicle } }}>
             <Button variant="primary">Rent Me</Button>
           </Link>

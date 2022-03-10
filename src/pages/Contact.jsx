@@ -44,6 +44,7 @@ function Contact() {
               onChange={handleChange}
               value={values.lastName}
               name="lastName"
+              required
             />
           </Row>
 
