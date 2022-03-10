@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import Fleet from "./pages/Fleet";
 import About from "./pages/About";
 import Rent from "./pages/Rent";
-import RentPagetwo from "./pages/RentPagetwo";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
         <Route path="About" element={<About />} />
         <Route path="Fleet" element={<Fleet />} />
         <Route path="Rent" element={<Rent />} />
-        <Route path="RentPagetwo" element={<RentPagetwo />} />
       </Routes>
     </div>
   );
