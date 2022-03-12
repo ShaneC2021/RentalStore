@@ -12,34 +12,63 @@ import RentStageTwo from "../components/RentStageTwo";
 function Rent() {
   const location = useLocation();
   const item = location.state.vcard.vehicle;
-  const [stepTwo, setStepTwo] = useState(false); //defines what step we are at in the rental from submission
 
-  const initialValues = {
-    firstName: "",
-    lastName: "",
-    pickupDate: "",
-    dropOffDate: "",
-    age: "",
+  const [currentPage, setCurrentPage] = useState(0);
+  const initialState = [
+    {
+      firstName: "",
+      lastName: "",
+      pickupDate: "",
+      dropOffDate: "",
+      age: "",
+    },
+    {
+      firstName: "",
+      lastName: "",
+      age: "",
+      rentalDuration: "",
+      cost: "",
+    },
+  ];
+
+  const [state, setState] = useState(initialState);
+
+  const handleStateChange = (pageId, newState) => {
+    
+    const currentState = { ...state };
+    currentState[pageId] = newState;
+    setState(currentState);
+  
   };
-  const [values, setValues] = useState(initialValues);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
+  const handleChangeStage = (pageId) => {
+    setCurrentPage(pageId);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const renderCurrentPage = () => {
+    switch (currentPage) {
+      case 0:
+        return (
+          <RentStageOne
+            data={state[0]}
+            handleChangeStage={handleChangeStage}
+            handleStateChange={handleStateChange}
+          />
+        );
+        break;
+      case 1:
+        return (
+          <RentStageTwo
+            data={state[0]}
+            handleChangeStage={handleChangeStage}
+            handleStateChange={handleStateChange}
+          />
+        );
+        break;
+      default:
+        return null;
+    }
   };
-  console.log(values);
-
-  const handleClick = () => {
-    setStepTwo(true);
-  };
-
-  // need to have error handling for impossible dates
-  // need to caculate number of days being rented based on user input
-  // need to have next button hidden until all relevant info has been inputted
 
   return (
     <>
@@ -51,17 +80,7 @@ function Rent() {
             </div>
           </Col>
           <Col xs={12} sm={12} md={9} lg={9} className="m-0 p-0">
-            <div className=" p-2 ">
-              {stepTwo ? (
-                <RentStageTwo {...values} />
-              ) : (
-                <RentStageOne
-                  onChange={handleChange}
-                  onSubmit={handleSubmit}
-                  onClick={handleClick}
-                />
-              )}
-            </div>
+            <div className=" p-2 ">{renderCurrentPage()}</div>
           </Col>
         </Row>
       </div>
@@ -69,5 +88,9 @@ function Rent() {
     </>
   );
 }
+
+// need to have error handling for impossible dates
+// need to caculate number of days being rented based on user input
+// need to have next button hidden until all relevant info has been inputted
 
 export default Rent;

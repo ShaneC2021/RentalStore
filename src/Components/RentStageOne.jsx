@@ -4,7 +4,6 @@ import FormField from "../components/FormField";
 import { Card, Row, Button, Col } from "react-bootstrap";
 
 function RentStageOne(props) {
-    console.log(props);
 
 
     
@@ -22,7 +21,7 @@ function RentStageOne(props) {
       type="date"
       name="pickupDate"
       size="sm"
-      onChange={props.onChange}
+      onChange={(e) => props.handleStateChange(0, {...props.data, pickupDate: e.target.value})}
       required
     />
   </Col>
@@ -35,7 +34,7 @@ function RentStageOne(props) {
       type="date"
       name="dropOffDate"
       size="sm"
-      onChange={props.onChange}
+      onChange={(e) => props.handleStateChange(0, {...props.data, dropOffDate: e.target.value})}
       required
     />
   </Col>
@@ -45,7 +44,7 @@ function RentStageOne(props) {
   <FormField
     field="First Name"
     type="text"
-    onChange={props.onChange}
+    onChange={(e) => props.handleStateChange(0, {...props.data, firstName: e.target.value})}
     name="firstName"
     required
   />
@@ -53,7 +52,7 @@ function RentStageOne(props) {
   <FormField
     field="Last Name"
     type="text"
-    onChange={props.onChange}
+    onChange={(e) => props.handleStateChange(0, {...props.data, lastName: e.target.value})}
     name="lastName"
   />
 </Row>
@@ -61,7 +60,7 @@ function RentStageOne(props) {
   <FormField
     field="Age"
     type="number"
-    onChange={props.onChange}
+    onChange={(e) => props.handleStateChange(0, {...props.data, age: e.target.value})}
     min="25"
     name="age"
   />
@@ -69,7 +68,7 @@ function RentStageOne(props) {
 <Row>
   <Col>
     <div className="d-grid gap-2 p-2">
-        <Button variant="dark" size="lg" onClick={props.onClick}>
+        <Button variant="dark" size="lg" onClick={()=>props.handleChangeStage(1)}>
           Next
         </Button>
     </div>
