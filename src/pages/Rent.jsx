@@ -18,32 +18,39 @@ function Rent() {
     {
       firstName: "",
       lastName: "",
-      pickupDate: "",
+      pickUpDate: "",
       dropOffDate: "",
       age: "",
-    },
-    {
-      firstName: "",
-      lastName: "",
-      age: "",
-      rentalDuration: "",
-      cost: "",
     },
   ];
 
   const [state, setState] = useState(initialState);
 
   const handleStateChange = (pageId, newState) => {
-    
     const currentState = { ...state };
     currentState[pageId] = newState;
     setState(currentState);
-  
+
+
   };
 
   const handleChangeStage = (pageId) => {
     setCurrentPage(pageId);
   };
+
+  
+  
+  const calculateRentalFee = () => {
+    
+    const date1 = new Date(state[0].pickUpDate);
+    const date2 = new Date(state[0].dropOffDate);
+    const timeSpan = date2.getTime() - date1.getTime();
+    const timeSpanDays = timeSpan / (1000 * 3600 * 24);
+    const rentalCost = timeSpanDays*item.cost ;
+    setState({...state[0], rentalFee: rentalCost, rentalDuration: timeSpanDays})
+
+  };
+  
 
   const renderCurrentPage = () => {
     switch (currentPage) {
@@ -53,18 +60,23 @@ function Rent() {
             data={state[0]}
             handleChangeStage={handleChangeStage}
             handleStateChange={handleStateChange}
+            calculateRentalFee={calculateRentalFee}
+            
           />
         );
-        break;
+        
+
       case 1:
         return (
           <RentStageTwo
-            data={state[0]}
+            data={state}
             handleChangeStage={handleChangeStage}
             handleStateChange={handleStateChange}
+            van={item}
           />
         );
-        break;
+        
+
       default:
         return null;
     }
@@ -90,7 +102,7 @@ function Rent() {
 }
 
 // need to have error handling for impossible dates
-// need to caculate number of days being rented based on user input
+
 // need to have next button hidden until all relevant info has been inputted
 
 export default Rent;

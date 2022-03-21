@@ -1,7 +1,7 @@
 import React from "react";
 import  Form  from "react-bootstrap/Form";
 import FormField from "../components/FormField";
-import { Card, Row, Button, Col } from "react-bootstrap";
+import { Row, Button, Col } from "react-bootstrap";
 
 function RentStageOne(props) {
 
@@ -21,7 +21,7 @@ function RentStageOne(props) {
       type="date"
       name="pickupDate"
       size="sm"
-      onChange={(e) => props.handleStateChange(0, {...props.data, pickupDate: e.target.value})}
+      onChange={(e) => props.handleStateChange(0, {...props.data, pickUpDate: e.target.value})}
       required
     />
   </Col>
@@ -68,7 +68,7 @@ function RentStageOne(props) {
 <Row>
   <Col>
     <div className="d-grid gap-2 p-2">
-        <Button variant="dark" size="lg" onClick={()=>props.handleChangeStage(1)}>
+        <Button variant="dark" size="lg" onClick={()=>{props.handleChangeStage(1);props.calculateRentalFee()}}>
           Next
         </Button>
     </div>
