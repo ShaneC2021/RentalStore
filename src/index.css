@@ -46,6 +46,9 @@ code {
   
 }
 
+.card-width {
+  width: 50vw;
+}
 .main-body {
   min-height: 70vh;
   

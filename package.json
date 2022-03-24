@@ -5,6 +5,7 @@
   "homepage": "https://shanec2021.github.io/",
   "dependencies": {
     "-": "^0.0.1",
+    "@paypal/react-paypal-js": "^7.6.0",
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.25.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -19,6 +20,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "save-dev": "^0.0.1-security",
+    "stripe": "^8.210.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

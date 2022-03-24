@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Rent from "./pages/Rent";
 import { Routes, Route } from "react-router-dom";
 
+
 function App() {
   return (
     <div className="app-height">
