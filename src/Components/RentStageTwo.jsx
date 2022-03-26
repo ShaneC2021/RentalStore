@@ -33,10 +33,12 @@ console.log(3, ErrorMessage);
   // check Approval
  const onApprove = (data, actions) => {
   return actions.order.capture().then(function (details) {
-    const { payer } = details;
-    setSuccess(true);
-  });
-};
+        // This function shows a transaction success message to your buyer.
+        alert('Transaction completed by ' + details.payer.name.given_name);
+      });
+    }
+    
+
 
 //capture likely error
 const onError = (data, actions) => {
@@ -51,10 +53,10 @@ const createOrder = (data, actions) => {
     .create({
       purchase_units: [
         {
-          description: "",
+          description: props.van.description,
           amount: {
             currency_code: "USD",
-            value: {},
+            value: rentalFee,
           },
         },
       ],
@@ -94,3 +96,5 @@ return (
     </>
   );
 }
+
+//sb-zzjiq15096414@personal.example.com

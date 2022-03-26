@@ -6,6 +6,7 @@ import Fleet from "./pages/Fleet";
 import About from "./pages/About";
 import Rent from "./pages/Rent";
 import { Routes, Route } from "react-router-dom";
+import {PayPalScriptProvider } from  "@paypal/react-paypal-js";
 
 
 function App() {
