@@ -13,19 +13,7 @@ import RentStageTwo from "../components/RentStageTwo";
 function Rent() {
   const location = useLocation();
   const item = location.state.vcard.vehicle;
-
-//Paypal depndencies
-
-  const [show, setShow] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [ErrorMessage, setErrorMessage] = useState("");
-  const [orderID, setOrderID] = useState(false);
-
-
-//
-
-
-
+  
 
   const [currentPage, setCurrentPage] = useState(0);
   const initialState = [
@@ -37,6 +25,7 @@ function Rent() {
       age: "",
     },
   ];
+  
 
   const [state, setState] = useState(initialState);
 
@@ -122,24 +111,3 @@ function Rent() {
 
 export default Rent;
 
-/*
- original
-<div className="main-body">
-<Row className="m-0 p-0">
-  <Col xs={12} sm={12} md={3} lg={3} className="m-0 p-0">
-    <div>
-      <VehicleCard obj={item} />
-    </div>
-  </Col>
-  <Col xs={12} sm={12} md={9} lg={9} className="m-0 p-0">
-    <div className=" p-2 ">{renderCurrentPage()}</div>
-  </Col>
-</Row>
-</div>
-<Footer />
-
-
-
-      <PayPalScriptProvider options={{ "client-id": "Afze7QtNgIHq_eXGAZfQ6jstxcjRgi-ZCxCJzcy6I3X_zEkN3-ts8iGIHMIY9zCevaZhacZD67V2mjtm" }}>
-            <PayPalButtons />
-          </PayPalScriptProvider> */

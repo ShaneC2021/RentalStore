@@ -6,6 +6,7 @@ import Fleet from "./pages/Fleet";
 import About from "./pages/About";
 import Rent from "./pages/Rent";
 import { Routes, Route } from "react-router-dom";
+import Receipt from "./pages/Receipt";
 import {PayPalScriptProvider } from  "@paypal/react-paypal-js";
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="About" element={<About />} />
         <Route path="Fleet" element={<Fleet />} />
         <Route path="Rent" element={<Rent />} />
+        <Route path="Receipt" element={<Receipt />} />
       </Routes>
     </div>
   );

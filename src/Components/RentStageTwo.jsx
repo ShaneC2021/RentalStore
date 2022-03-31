@@ -3,13 +3,23 @@ import Footer from "./Footer";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import { Link, Navigate, useNavigate} from "react-router-dom";
 
 
 
 export default function RentPagetwo(props) {
   const { firstName, lastName, age, pickUpDate, dropOffDate, rentalDuration, rentalFee } = props.data;
 
-  console.log(props);
+  const receiptDetails = props.data;
+
+  let navigate = useNavigate();
+
+
+  const [success, setSuccess] = useState(false);
+  const [ErrorMessage, setErrorMessage] = useState("");
+  const [orderID, setOrderID] = useState(false);
+
+
 /*
   useEffect(() => {
     if (success) {
@@ -22,12 +32,8 @@ export default function RentPagetwo(props) {
 console.log(1, orderID);
 console.log(2, success);
 console.log(3, ErrorMessage);
-*/
-  //Paypal dependencies
 
-  const [success, setSuccess] = useState(false);
-  const [ErrorMessage, setErrorMessage] = useState("");
-  const [orderID, setOrderID] = useState(false);
+ // Paypal dependencies */
 
 
   // check Approval
@@ -35,6 +41,7 @@ console.log(3, ErrorMessage);
   return actions.order.capture().then(function (details) {
         // This function shows a transaction success message to your buyer.
         alert('Transaction completed by ' + details.payer.name.given_name);
+       navigate("/Receipt",{state:{receiptDetails}}); 
       });
     }
     
@@ -97,4 +104,3 @@ return (
   );
 }
 
-//sb-zzjiq15096414@personal.example.com
