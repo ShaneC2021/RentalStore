@@ -16,12 +16,13 @@ function RentStageOne(props) {
               type="date"
               name="pickupDate"
               size="sm"
-              onChange={(e) =>
+              onChange={(e) =>{
                 props.handleStateChange(0, {
                   ...props.data,
                   pickUpDate: e.target.value,
                 })
-              }
+                props.dateValidator();
+              }}
               required
             />
           </Col>
@@ -34,12 +35,15 @@ function RentStageOne(props) {
               type="date"
               name="dropOffDate"
               size="sm"
-              onChange={(e) =>
+              onChange={(e) =>{
                 props.handleStateChange(0, {
-                  ...props.data,
+                 ...props.data,
                   dropOffDate: e.target.value,
                 })
+                 props.dateValidator()
               }
+              }
+              
               required
             />
           </Col>
@@ -53,6 +57,7 @@ function RentStageOne(props) {
               props.handleStateChange(0, {
                 ...props.data,
                 firstName: e.target.value,
+                
               })
             }
             name="firstName"

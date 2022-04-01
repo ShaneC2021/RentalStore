@@ -39,6 +39,19 @@ function Rent() {
     setCurrentPage(pageId);
   };
 
+  const dateValidator = () =>{
+    const currentDate = new Date();
+    const pickup = new Date(state[0].pickUpDate);
+    const dropoff = new Date(state[0].dropOffDate);
+
+
+    if (pickup.getTime() < currentDate) 
+    console.log("not valid");
+
+    if (dropoff.getTime < pickup.getTime())
+    console.log ("dropoff must occur after pickup ");
+  }
+
   const calculateRentalFee = () => {
     const date1 = new Date(state[0].pickUpDate);
     const date2 = new Date(state[0].dropOffDate);
@@ -61,8 +74,11 @@ function Rent() {
             handleChangeStage={handleChangeStage}
             handleStateChange={handleStateChange}
             calculateRentalFee={calculateRentalFee}
+            dateValidator={dateValidator}
           />
         );
+
+        
 
       case 1:
         return (

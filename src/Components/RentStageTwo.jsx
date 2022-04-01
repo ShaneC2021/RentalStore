@@ -93,7 +93,7 @@ return (
         </Button>
        
         <div>
-          <PayPalScriptProvider options={{ "client-id": "Afze7QtNgIHq_eXGAZfQ6jstxcjRgi-ZCxCJzcy6I3X_zEkN3-ts8iGIHMIY9zCevaZhacZD67V2mjtm" }}>
+          <PayPalScriptProvider>
             <PayPalButtons
             createOrder={createOrder}
             onApprove={onApprove} />

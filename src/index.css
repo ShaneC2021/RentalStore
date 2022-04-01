@@ -87,3 +87,8 @@ div h6 {
 .rent-border {
   border: 1px solid green;
 }
+
+.receipt {
+  border: 1px solid black;
+  height: 200px;
+}
