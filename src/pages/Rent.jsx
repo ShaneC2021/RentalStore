@@ -32,25 +32,62 @@ function Rent() {
   const handleStateChange = (pageId, newState) => {
     const currentState = { ...state };
     currentState[pageId] = newState;
-    setState(currentState);
+   // dateValidator(newState)?setState(currentState):setState({...newState,pickUpDate: new Date() });
+   setState(currentState)
+  
   };
+  console.log(state);
+  
 
   const handleChangeStage = (pageId) => {
+    
     setCurrentPage(pageId);
   };
 
-  const dateValidator = () =>{
+
+
+//
+
+function formatDate() {
+  let d = new Date(),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+      console.log([year, month, day].join('-'));
+
+  return [year, month, day].join('-');
+}
+const currentDate = formatDate();
+
+ /* const dateValidator = (stateObject) =>{
+
+
+
     const currentDate = new Date();
-    const pickup = new Date(state[0].pickUpDate);
-    const dropoff = new Date(state[0].dropOffDate);
+    let pickup = new Date(stateObject.pickUpDate);
+    let dropoff = new Date(stateObject.dropOffDate);
+    console.log(currentDate);
+    console.log(pickup.getTime());
+    console.log(dropoff.getTime());
 
 
-    if (pickup.getTime() < currentDate) 
-    console.log("not valid");
-
-    if (dropoff.getTime < pickup.getTime())
-    console.log ("dropoff must occur after pickup ");
+    if (pickup.getTime() < currentDate) {
+    alert("this date has already passed");
+return false;
+  
+    }
+    if (dropoff.getTime() < pickup.getTime()){
+    alert("dropoff must occur after pickup ");
+    return false
   }
+  return true;
+  }*/
 
   const calculateRentalFee = () => {
     const date1 = new Date(state[0].pickUpDate);
@@ -74,7 +111,8 @@ function Rent() {
             handleChangeStage={handleChangeStage}
             handleStateChange={handleStateChange}
             calculateRentalFee={calculateRentalFee}
-            dateValidator={dateValidator}
+           // dateValidator={dateValidator}
+            currentDate={currentDate}
           />
         );
 

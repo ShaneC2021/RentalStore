@@ -4,6 +4,8 @@ import FormField from "../components/FormField";
 import { Row, Button, Col } from "react-bootstrap";
 
 function RentStageOne(props) {
+  console.log(props.currentDate);
+  console.log(props.data);
   return (
     <div>
       <Form onSubmit={props.onSubmit}>
@@ -16,13 +18,14 @@ function RentStageOne(props) {
               type="date"
               name="pickupDate"
               size="sm"
-              onChange={(e) =>{
+              min={props.currentDate}
+              onChange={(e) =>
                 props.handleStateChange(0, {
                   ...props.data,
                   pickUpDate: e.target.value,
                 })
-                props.dateValidator();
-              }}
+              
+              }
               required
             />
           </Col>
@@ -35,14 +38,15 @@ function RentStageOne(props) {
               type="date"
               name="dropOffDate"
               size="sm"
-              onChange={(e) =>{
+              min={props.data.pickUpDate}
+              onChange={(e) =>
                 props.handleStateChange(0, {
                  ...props.data,
                   dropOffDate: e.target.value,
                 })
-                 props.dateValidator()
+                 
               }
-              }
+              
               
               required
             />
