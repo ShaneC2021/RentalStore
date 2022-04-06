@@ -4,11 +4,11 @@ import FormField from "../components/FormField";
 import { Row, Button, Col } from "react-bootstrap";
 
 function RentStageOne(props) {
-  console.log(props.currentDate);
-  console.log(props.data);
+  console.log(props);
+  // onsubmit ??
   return (
     <div>
-      <Form onSubmit={props.onSubmit}>
+      <Form onSubmit={props.onSubmit}> 
         <Row>
           <Col xs={12} sm={12} lg={3}>
             <Form.Label>Pickup Date: </Form.Label>
@@ -16,16 +16,10 @@ function RentStageOne(props) {
           <Col xs={12} sm={12} lg={3}>
             <Form.Control
               type="date"
-              name="pickupDate"
+              name="pickUpDate"
               size="sm"
               min={props.currentDate}
-              onChange={(e) =>
-                props.handleStateChange(0, {
-                  ...props.data,
-                  pickUpDate: e.target.value,
-                })
-              
-              }
+              onChange={props.handleStateChange}
               required
             />
           </Col>
@@ -38,16 +32,8 @@ function RentStageOne(props) {
               type="date"
               name="dropOffDate"
               size="sm"
-              min={props.data.pickUpDate}
-              onChange={(e) =>
-                props.handleStateChange(0, {
-                 ...props.data,
-                  dropOffDate: e.target.value,
-                })
-                 
-              }
-              
-              
+              min={props.data.pickUpDate}   // stops user selecting a dropoff date prior to pickup date
+              onChange={props.handleStateChange}
               required
             />
           </Col>
@@ -57,13 +43,7 @@ function RentStageOne(props) {
           <FormField
             field="First Name"
             type="text"
-            onChange={(e) =>
-              props.handleStateChange(0, {
-                ...props.data,
-                firstName: e.target.value,
-                
-              })
-            }
+            onChange={props.handleStateChange}
             name="firstName"
             required
           />
@@ -71,22 +51,16 @@ function RentStageOne(props) {
           <FormField
             field="Last Name"
             type="text"
-            onChange={(e) =>
-              props.handleStateChange(0, {
-                ...props.data,
-                lastName: e.target.value,
-              })
-            }
+            onChange={props.handleStateChange}
             name="lastName"
+            required
           />
         </Row>
         <Row>
           <FormField
             field="Age"
             type="number"
-            onChange={(e) =>
-              props.handleStateChange(0, { ...props.data, age: e.target.value })
-            }
+            onChange={props.handleStateChange}
             min="25"
             name="age"
           />

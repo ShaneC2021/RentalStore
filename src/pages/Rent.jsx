@@ -13,110 +13,81 @@ import RentStageTwo from "../components/RentStageTwo";
 function Rent() {
   const location = useLocation();
   const item = location.state.vcard.vehicle;
-  
 
+  // sets page to component to be displayed
   const [currentPage, setCurrentPage] = useState(0);
-  const initialState = [
+ 
+  // object contains customer details
+  const initialState = 
     {
       firstName: "",
       lastName: "",
       pickUpDate: "",
       dropOffDate: "",
-      age: "",
-    },
-  ];
-  
+      age: ""
+    }
 
   const [state, setState] = useState(initialState);
 
-  const handleStateChange = (pageId, newState) => {
-    const currentState = { ...state };
-    currentState[pageId] = newState;
-   // dateValidator(newState)?setState(currentState):setState({...newState,pickUpDate: new Date() });
-   setState(currentState)
-  
+  const handleStateChange = e => {
+    const{ name, value} = e.target;
+
+    setState(prevState =>({
+      ...prevState, 
+      [name]:value}));
   };
-  console.log(state);
-  
 
   const handleChangeStage = (pageId) => {
-    
     setCurrentPage(pageId);
   };
 
-
-
-//
-
-function formatDate() {
-  let d = new Date(),
-      month = '' + (d.getMonth() + 1),
-      day = '' + d.getDate(),
+  function formatDate() {
+    let d = new Date(),
+      month = "" + (d.getMonth() + 1),
+      day = "" + d.getDate(),
       year = d.getFullYear();
 
-  if (month.length < 2) 
-      month = '0' + month;
-  if (day.length < 2) 
-      day = '0' + day;
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
 
-      console.log([year, month, day].join('-'));
-
-  return [year, month, day].join('-');
-}
-const currentDate = formatDate();
-
- /* const dateValidator = (stateObject) =>{
-
-
-
-    const currentDate = new Date();
-    let pickup = new Date(stateObject.pickUpDate);
-    let dropoff = new Date(stateObject.dropOffDate);
-    console.log(currentDate);
-    console.log(pickup.getTime());
-    console.log(dropoff.getTime());
-
-
-    if (pickup.getTime() < currentDate) {
-    alert("this date has already passed");
-return false;
-  
-    }
-    if (dropoff.getTime() < pickup.getTime()){
-    alert("dropoff must occur after pickup ");
-    return false
+    return [year, month, day].join("-");
   }
-  return true;
-  }*/
+  const currentDate = formatDate();
 
   const calculateRentalFee = () => {
-    const date1 = new Date(state[0].pickUpDate);
-    const date2 = new Date(state[0].dropOffDate);
+    const date1 = new Date(state.pickUpDate);
+    const date2 = new Date(state.dropOffDate);
     const timeSpan = date2.getTime() - date1.getTime();
-    const timeSpanDays = timeSpan / (1000 * 3600 * 24);
-    const rentalCost = timeSpanDays * item.cost;
+    let timeSpanDays = timeSpan / (1000 * 3600 * 24);
+    let rentalCost = null;
+
+    // covers sameday rental and return
+    if (timeSpan === 0) {
+      rentalCost = item.cost;
+      timeSpanDays = 1;
+    } else rentalCost = timeSpanDays * item.cost;
+
     setState({
-      ...state[0],
+      ...state,
       rentalFee: rentalCost,
       rentalDuration: timeSpanDays,
     });
   };
-
+  
+  console.log(state);
   const renderCurrentPage = () => {
     switch (currentPage) {
       case 0:
         return (
           <RentStageOne
-            data={state[0]}
+            data={state}
             handleChangeStage={handleChangeStage}
             handleStateChange={handleStateChange}
             calculateRentalFee={calculateRentalFee}
-           // dateValidator={dateValidator}
             currentDate={currentDate}
+            
           />
         );
-
-        
 
       case 1:
         return (
@@ -159,9 +130,6 @@ return false;
   );
 }
 
-// need to have error handling for impossible dates
-
 // need to have next button hidden until all relevant info has been inputted
 
 export default Rent;
-
