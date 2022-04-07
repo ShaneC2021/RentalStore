@@ -130,6 +130,6 @@ function Rent() {
   );
 }
 
-// need to have next button hidden until all relevant info has been inputted
+
 
 export default Rent;
