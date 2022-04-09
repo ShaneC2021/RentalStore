@@ -67,7 +67,7 @@ function RentStageOne(props) {
           <Col>
             <div className="d-grid gap-2 p-2">
               <Button
-                variant="dark"
+                variant="primary"
                 size="lg"
                 onClick={() => {
                   props.handleChangeStage(1);
