@@ -4,8 +4,6 @@ import FormField from "../components/FormField";
 import { Row, Button, Col } from "react-bootstrap";
 
 function RentStageOne(props) {
-  console.log(props);
-  // onsubmit ??
   return (
     <div>
       <Form onSubmit={props.onSubmit}> 

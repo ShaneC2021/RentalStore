@@ -2,7 +2,7 @@
   "name": "carrental",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://shanec2021.github.io/",
+  "homepage": "https://ShaneC2021.github.io/RentalStore",
   "dependencies": {
     "-": "^0.0.1",
     "@paypal/react-paypal-js": "^7.6.0",

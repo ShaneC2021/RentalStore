@@ -7,9 +7,6 @@ function Receipt() {
   const location = useLocation();
   const { receiptInfo } = location.state;
 
-  
-  console.log(receiptInfo);
-
   return (
     <>
       <div className="main-body d-flex justify-content-center align-items-center">
@@ -30,7 +27,8 @@ function Receipt() {
               <tr>
                 <td>Rental Period: </td>
                 <td>
-                  {receiptInfo.details.pickUpDate} to {receiptInfo.details.dropOffDate}
+                  {receiptInfo.details.pickUpDate} to{" "}
+                  {receiptInfo.details.dropOffDate}
                 </td>
               </tr>
               <tr>

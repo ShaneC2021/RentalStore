@@ -1,13 +1,9 @@
 import { React, useState } from "react";
-import { Card, Row, Button, Col } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
-import FormField from "../components/FormField";
+import { Row, Col } from "react-bootstrap";
 import VehicleCard from "../components/VehicleCard";
 import Footer from "../components/Footer";
 import RentStageOne from "../components/RentStageOne";
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import RentStageTwo from "../components/RentStageTwo";
 
 function Rent() {
@@ -61,7 +57,7 @@ function Rent() {
     let timeSpanDays = timeSpan / (1000 * 3600 * 24);
     let rentalCost = null;
 
-    // covers sameday rental and return
+
     if (timeSpan === 0) {
       rentalCost = item.cost;
       timeSpanDays = 1;
@@ -74,7 +70,6 @@ function Rent() {
     });
   };
   
-  console.log(state);
   const renderCurrentPage = () => {
     switch (currentPage) {
       case 0:
@@ -116,10 +111,10 @@ function Rent() {
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}></Col>
         </Row>
-        <Row>
+        <Row className="m-0 mt-5 mb-5">
           <Col xs={12} sm={12} md={3} lg={3}></Col>
           <Col xs={12} sm={12} md={6} lg={6}>
-            <div className=" p-1">{renderCurrentPage()}</div>
+            <div>{renderCurrentPage()}</div>
           </Col>
           <Col xs={12} sm={12} md={3} lg={3}></Col>
         </Row>

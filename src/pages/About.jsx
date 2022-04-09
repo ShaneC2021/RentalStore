@@ -9,7 +9,7 @@ function About() {
       <div className="p-1">
       <p>
         We are a small unique family owned business dedicated to providing a
-        quality easy to use rental service to travellers in the Arctic region with a sense of
+        quality easy to use rental service to travellers in the Arkansas region with a sense of
         adventure. We specialize in Campervans both modern and vintage. Whether
         you are seeking a weekend get away or a 3 month expedition into the
         wild, we have a Camper for you. We look forward to assisting you in
