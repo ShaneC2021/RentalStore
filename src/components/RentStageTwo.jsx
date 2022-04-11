@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import {  Navigate, useNavigate } from "react-router-dom";
 
 export default function RentPagetwo(props) {
 
@@ -72,7 +72,7 @@ export default function RentPagetwo(props) {
   return (
     <>
       <div className="text-center main-body">
-        <div>
+        <div className="border border-secondary"><div>
           <p>
             Pickup Date: {pickUpDate}
             <br />
@@ -92,11 +92,11 @@ export default function RentPagetwo(props) {
           size="lg"
           onClick={() => props.handleChangeStage(0)}
         >
-          Back
+          Change Dates
         </Button>
-        </div>
+        </div></div>
 
-        <div>
+        <div className="mt-5">
           <PayPalScriptProvider
             options={{ "client-id": process.env.REACT_APP_CLIENT_ID }}
           >

@@ -61,6 +61,7 @@ function RentStageOne(props) {
             onChange={props.handleStateChange}
             min="25"
             name="age"
+            required
           />
         </Row>
         <Row>
@@ -69,10 +70,10 @@ function RentStageOne(props) {
               <Button
                 variant="primary"
                 size="lg"
-                onClick={() => {
-                  props.handleChangeStage(1);
-                  props.calculateRentalFee();
-                }}
+                type="submit"
+                
+                
+                
               >
                 Next
               </Button>
@@ -83,5 +84,10 @@ function RentStageOne(props) {
     </div>
   );
 }
+/*
+onClick={() => {
+  props.handleChangeStage(1);
+  props.calculateRentalFee();
+}}*/
 
 export default RentStageOne;

@@ -37,6 +37,13 @@ function Rent() {
     setCurrentPage(pageId);
   };
 
+  //new
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleChangeStage(1);
+    calculateRentalFee();
+  }
+
   function formatDate() {
     let d = new Date(),
       month = "" + (d.getMonth() + 1),
@@ -75,6 +82,7 @@ function Rent() {
       case 0:
         return (
           <RentStageOne
+            onSubmit={handleSubmit}
             data={state}
             handleChangeStage={handleChangeStage}
             handleStateChange={handleStateChange}
