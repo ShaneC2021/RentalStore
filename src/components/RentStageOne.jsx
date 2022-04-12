@@ -84,10 +84,6 @@ function RentStageOne(props) {
     </div>
   );
 }
-/*
-onClick={() => {
-  props.handleChangeStage(1);
-  props.calculateRentalFee();
-}}*/
+
 
 export default RentStageOne;
