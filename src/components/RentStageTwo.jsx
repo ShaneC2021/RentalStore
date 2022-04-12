@@ -1,9 +1,8 @@
 import React from "react";
-import Footer from "./Footer";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import {  Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function RentPagetwo(props) {
 
