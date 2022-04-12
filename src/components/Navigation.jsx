@@ -15,7 +15,7 @@ function Navigation() {
       >
         <Container>
           <Navbar.Brand>
-            <LinkContainer to="/">
+            <LinkContainer to="/RentalStore">
               <Nav.Link>
                 <img
                   src={require("../images/campervan.jpg")}
@@ -31,16 +31,16 @@ function Navigation() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto p-0">
-              <LinkContainer to="/About">
+              <LinkContainer to="/RentalStore/About">
                 <Nav.Link className="features">About Us</Nav.Link>
               </LinkContainer>
             </Nav>
             <Nav>
-              <LinkContainer to="/Fleet">
+              <LinkContainer to="/RentalStore/Fleet">
                 <Nav.Link>Our Fleet</Nav.Link>
               </LinkContainer>
 
-              <LinkContainer to="/Contact">
+              <LinkContainer to="RentalStore/Contact">
                 <Nav.Link>Contact Us</Nav.Link>
               </LinkContainer>
             </Nav>
