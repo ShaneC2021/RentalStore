@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/RentalStore/static/css/main.88757af1.css",
-    "main.js": "/RentalStore/static/js/main.c6add4e9.js",
+    "main.js": "/RentalStore/static/js/main.c76c6b9f.js",
     "static/media/fleet7.jpg": "/RentalStore/static/media/fleet7.b9d6ab1d075a66d2591f.jpg",
     "static/media/fleet5.png": "/RentalStore/static/media/fleet5.7718485f9786cbc69a14.png",
     "static/media/fip5u3yoew2tne2oysau.jpg": "/RentalStore/static/media/fip5u3yoew2tne2oysau.c00ecf12bf14950658b2.jpg",
@@ -26,10 +26,10 @@
     "static/media/kevin-schmid-grs8iMGqQE-unsplash-300x200.jpg": "/RentalStore/static/media/kevin-schmid-grs8iMGqQE-unsplash-300x200.da7fb316073fda3b0a16.jpg",
     "index.html": "/RentalStore/index.html",
     "main.88757af1.css.map": "/RentalStore/static/css/main.88757af1.css.map",
-    "main.c6add4e9.js.map": "/RentalStore/static/js/main.c6add4e9.js.map"
+    "main.c76c6b9f.js.map": "/RentalStore/static/js/main.c76c6b9f.js.map"
   },
   "entrypoints": [
     "static/css/main.88757af1.css",
-    "static/js/main.c6add4e9.js"
+    "static/js/main.c76c6b9f.js"
   ]
 }
