@@ -23,7 +23,7 @@ function VehicleCard(props) {
         </Card.Text>
 
         {props.showButton? (
-          <Link to="/Rent" state={{ vcard: { vehicle } }}>
+          <Link to="/RentalStore/Rent" state={{ vcard: { vehicle } }}>
             <Button variant="primary">Rent Me</Button>
           </Link>
         ) : null}
