@@ -64,7 +64,7 @@ export default function RentPagetwo(props) {
       console.log(data.orderID);
       alert("Transaction completed by " + details.payer.name.given_name);
       setSuccess(true);
-      navigate("/Receipt", { state: { receiptInfo } });
+      navigate("/RentalStore/Receipt", { state: { receiptInfo } });
     });
   };
 

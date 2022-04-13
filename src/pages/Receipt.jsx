@@ -9,7 +9,7 @@ function Receipt() {
 
   return (
     <>
-      <div className="main-body d-flex justify-content-center align-items-center">
+      <div className="main-body d-flex justify-content-center align-items-center body-color">
         <div className="receipt">
           <Table striped hover size="sm">
             <thead>
