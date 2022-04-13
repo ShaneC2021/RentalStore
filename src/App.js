@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="app-height">
       <Navigation />
-      <Routes>
+      <Routes basename="/RentalStore">
         <Route index element={<Home />} />
         <Route path="/RentalStore" element={<Home />} />
         <Route path="/RentalStore/Contact" element={<Contact />} />
