@@ -6,7 +6,7 @@ import { Row, Col } from "react-bootstrap";
 
 function Footer() {
   return (
-    <Row className="footer m-0">
+    <Row className="footer m-0 pt-3">
       <Col xs={12} sm={12} md={4} lg={4}>
         <div >
           <h6>Follow Us On</h6>

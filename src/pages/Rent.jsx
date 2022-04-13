@@ -109,17 +109,17 @@ function Rent() {
 
   return (
     <>
-      <div className="main-body">
+      <div className="main-body body-color">
         <Row className="m-0 p-0">
           <Col xs={12} sm={12} md={4} lg={4}></Col>
           <Col xs={12} sm={12} md={4} lg={4} className="m-0 p-0">
-            <div>
+            <div className="pt-3">
               <VehicleCard obj={item} />
             </div>
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}></Col>
         </Row>
-        <Row className="m-0 mt-5 mb-5">
+        <Row className="m-0 mt-5 pb-5">
           <Col xs={12} sm={12} md={3} lg={3}></Col>
           <Col xs={12} sm={12} md={6} lg={6}>
             <div>{renderCurrentPage()}</div>

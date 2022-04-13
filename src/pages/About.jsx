@@ -3,10 +3,10 @@ import Footer from "../components/Footer";
 
 function About() {
   return (<>
-    <div className="main-body d-flex flex-column align-items-center justify-content-center text-center p-2 ">
-      <div className="contact-details about">
+    <div className="body-color main-body d-flex flex-column align-items-center justify-content-center text-center">
+      <div className="contact-details about m-2">
       <div><h2>About Us</h2></div>
-      <div className="p-1">
+      <div className="p-4">
       <p>
         We are a small unique family owned business dedicated to providing a
         quality easy to use rental service to travellers in the Arkansas region with a sense of

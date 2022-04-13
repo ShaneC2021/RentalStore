@@ -25,8 +25,8 @@ function Contact() {
   };
 
   return (<>
-    <div className="main-body p-1 d-flex flex-column align-items-center justify-content-center">
-      <div className="contact-details p-2">
+    <div className="main-body p-1 d-flex flex-column align-items-center justify-content-center body-color">
+      <div className="contact-details p-2 bg-white">
         <Form onSubmit={handleSubmit}>
           <Row>
             <FormField

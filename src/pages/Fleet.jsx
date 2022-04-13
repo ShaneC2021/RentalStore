@@ -12,8 +12,8 @@ function Fleet() {
   const [array] = useState(arrayOfVans)  //initalize array with imported van info
 
   return (<>
-    <div className="main-body-fleet">
-      <Row xs={1} md={2} lg={4} className="g-3">
+    <div className="main-body-fleet body-color">
+      <Row xs={1} md={2} lg={3} className="g-3">
         {array.map((item, idx) => (
       
           <Col key={idx}>
