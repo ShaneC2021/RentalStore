@@ -1,7 +1,7 @@
 const arrayOfVans = [
   {
     id: 1,
-    name: "Grand California",
+    name: "Grand Cali",
     description: "Stylish",
     price: "$150 per night",
     startDate:" ",
@@ -11,7 +11,7 @@ const arrayOfVans = [
   },
   {
     id: 2,
-    name: "Bay Window Camper",
+    name: "Bay Window",
     description: "Hit the road jack",
     price: "$80 per night",
     startDate:" ",
@@ -21,8 +21,8 @@ const arrayOfVans = [
   },
   {
     id: 3,
-    name: "Retro Electric Camper",
-    description: "Vintage yet modern",
+    name: "Retro Electric",
+    description: "The 70's are back",
     price: "$100 per night",
     startDate:" ",
     endDate:" ",
@@ -32,7 +32,7 @@ const arrayOfVans = [
   {
     id: 4,
     name: "Modern",
-    description: "Camping in the 21st century",
+    description: "Camping in 2077",
     price: "$125 per night",
     startDate:" ",
     endDate:" ",
@@ -41,8 +41,8 @@ const arrayOfVans = [
   },
   {
     id: 5,
-    name: "Vintage Camper",
-    description: "For the retro lovers",
+    name: "Vintage",
+    description: "Nostalgia",
     price: "$50 per night",
     startDate:" ",
     endDate:" ",
@@ -51,8 +51,8 @@ const arrayOfVans = [
   },
   {
     id: 6,
-    name: "Home Comfort",
-    description: "All the comforts you need on the road",
+    name: "Home",
+    description: "House on wheels",
     price: "$125 per night",
     startDate:" ",
     endDate:" ",
