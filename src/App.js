@@ -21,7 +21,7 @@ function App() {
         <Route path="/RentalStore/About" element={<About />} />
         <Route path="/RentalStore/Fleet" element={<Fleet />} />
         <Route path="/RentalStore/Rent" element={<Rent />} />
-        <Route path="RentalStore/Receipt" element={<Receipt />} />
+        <Route path="/RentalStore/Receipt" element={<Receipt />} />
       </Routes>
     </div>
   );
