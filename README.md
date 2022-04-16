@@ -11,8 +11,8 @@ When trying to decide what I should build to help me learn REACT I took inspirat
 
 
 ### Built With
-*[Create React App](https://reactjs.org/docs/create-a-new-react-app.html)  
-*[React.js](https://reactjs.org)
-*[React Router V6](https://reactrouter.com/)
-*[Bootstrap](https://react-bootstrap.github.io/) 
-*[PaypalButtons](https://developer.paypal.com/docs/checkout/) 
+* [Create React App](https://reactjs.org/docs/create-a-new-react-app.html)  
+* [React.js](https://reactjs.org)
+* [React Router V6](https://reactrouter.com/)
+* [Bootstrap](https://react-bootstrap.github.io/) 
+* [PaypalButtons](https://developer.paypal.com/docs/checkout/) 
