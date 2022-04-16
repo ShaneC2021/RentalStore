@@ -111,16 +111,16 @@ function Rent() {
     <>
       <div className="main-body body-color d-flex flex-column justify-content-center">
         <div>
-        <Row className="m-2 p-0">
+        <Row className="m-0 p-0">
           <Col xs={12} sm={12} md={4} lg={4}></Col>
           <Col xs={12} sm={12} md={4} lg={4} className="m-0 p-0">
-            <div className="">
+            <div className="m-0">
               <VehicleCard obj={item} />
             </div>
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}></Col>
         </Row>
-        <Row className="m-0 ">
+        <Row className="m-0">
           <Col xs={12} sm={12} md={4} lg={4}></Col>
           <Col xs={12} sm={12} md={4} lg={4} className="p-0" >
             <div>{renderCurrentPage()}</div>

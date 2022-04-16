@@ -4,10 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Description
 
-RentalStore is my first React web application attempt at building a small commerce website for a small business in the vacation van rental industry. 
+RentalStore is my first React web application. My attempt at building a small commerce website for a small business in the vacation van rental industry. 
+Once a customer arrives on the main page they are directed to the fleet to to select from a variety of camper vans to choose for their rental. Once a selection has been made and relevant information entered they prompetd to make a payment via paypal or
 
 ### Motivation
-When trying to decide what I should build to help me learn REACT I took inspiration from a friend who was recently trying to open a small business in that industry
+When deciding on what to build to help me learn REACT, I took inspiration from a friend who was recently trying to open a small business in that industry.
 
 
 ### Built With

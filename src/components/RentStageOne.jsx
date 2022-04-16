@@ -5,9 +5,9 @@ import { Row, Button, Col } from "react-bootstrap";
 
 function RentStageOne(props) {
   return (
-    <div className="bg-light p-2">
+    <div className="bg-light p-1">
       <Form onSubmit={props.onSubmit}> 
-        <Row>
+        <Row className="m-0 ">
           <Col xs={12} sm={12} lg={6}>
             <Form.Label>Pickup Date: </Form.Label>
           </Col>
@@ -37,7 +37,7 @@ function RentStageOne(props) {
           </Col>
         </Row>
 
-        <Row>
+        <Row className="m-0">
           <FormField
             field="First Name"
             type="text"
@@ -56,17 +56,18 @@ function RentStageOne(props) {
             required
           />
         </Row>
-        <Row>
+        <Row className="m-0">
           <FormField
             field="Age"
             type="number"
             onChange={props.handleStateChange}
             min="25"
             name="age"
+            value={props.data.age}
             required
           />
         </Row>
-        <Row>
+        <Row className="m-0">
           <Col>
             <div className="d-grid gap-2 p-2">
               <Button
