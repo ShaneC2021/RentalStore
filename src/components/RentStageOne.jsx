@@ -5,13 +5,13 @@ import { Row, Button, Col } from "react-bootstrap";
 
 function RentStageOne(props) {
   return (
-    <div>
+    <div className="bg-light p-2">
       <Form onSubmit={props.onSubmit}> 
         <Row>
-          <Col xs={12} sm={12} lg={3}>
+          <Col xs={12} sm={12} lg={6}>
             <Form.Label>Pickup Date: </Form.Label>
           </Col>
-          <Col xs={12} sm={12} lg={3}>
+          <Col xs={12} sm={12} lg={6}>
             <Form.Control
               type="date"
               name="pickUpDate"
@@ -22,10 +22,10 @@ function RentStageOne(props) {
             />
           </Col>
 
-          <Col xs={12} sm={12} lg={3}>
+          <Col xs={12} sm={12} lg={6}>
             <Form.Label>Drop Off Date: </Form.Label>
           </Col>
-          <Col xs={12} sm={12} lg={3}>
+          <Col xs={12} sm={12} lg={6}>
             <Form.Control
               type="date"
               name="dropOffDate"
@@ -43,6 +43,7 @@ function RentStageOne(props) {
             type="text"
             onChange={props.handleStateChange}
             name="firstName"
+            value={props.data.firstName}
             required
           />
 
@@ -51,6 +52,7 @@ function RentStageOne(props) {
             type="text"
             onChange={props.handleStateChange}
             name="lastName"
+            value={props.data.lastName}
             required
           />
         </Row>

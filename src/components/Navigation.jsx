@@ -18,7 +18,7 @@ function Navigation() {
             <LinkContainer to="/RentalStore">
               <Nav.Link>
                 <img
-                  src={require("../images/campervan.jpg")}
+                  src={require("../images/main20.jpg")}
                   width="75"
                   height="75"
                   className="d-inline-block align-top logo img-responsive"

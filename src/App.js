@@ -12,7 +12,7 @@ import Receipt from "./pages/Receipt";
 
 function App() {
   return (
-    <div className="app-height">
+    <div className="">
       <Navigation />
       <Routes basename="/RentalStore">
         <Route index element={<Home />} />

@@ -120,12 +120,12 @@ function Rent() {
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}></Col>
         </Row>
-        <Row className="m-2">
-          <Col xs={12} sm={12} md={4} lg={3}></Col>
-          <Col xs={12} sm={12} md={4} lg={6} className="border border-secondary">
+        <Row className="m-0 ">
+          <Col xs={12} sm={12} md={4} lg={4}></Col>
+          <Col xs={12} sm={12} md={4} lg={4} className="p-0" >
             <div>{renderCurrentPage()}</div>
           </Col>
-          <Col xs={12} sm={12} md={4} lg={3}></Col>
+          <Col xs={12} sm={12} md={4} lg={4}></Col>
         </Row></div>
         
       </div>

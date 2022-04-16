@@ -38,7 +38,7 @@ code {
 }
 
 .background-logo {
-  background-image: url("./images/main.jpg ") ;
+  background-image: url("./images/main17.jpg ") ;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -99,4 +99,8 @@ div h6 {
 .receipt {
   border: 1px solid black;
   
+}
+
+a:link {
+color: black;
 }

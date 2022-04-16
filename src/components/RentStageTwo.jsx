@@ -70,7 +70,7 @@ export default function RentPagetwo(props) {
 
   return (
     <>
-      <div className="text-center main-body date-confirmation border border-secondary p-1">
+      <div className="text-center main-body bg-light p-1">
         <div><div>
           <p>
             Pickup Date: {pickUpDate}
