@@ -130,7 +130,7 @@ function Rent() {
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}></Col>
         </Row>
-        <Row>
+        <Row className="m-0">
           <Col xs={12} sm={12} md={4} lg={4} ></Col>
           <Col xs={12} sm={12} md={4} lg={4} className="p-4" >
             <div>{renderCurrentPage()}</div>
