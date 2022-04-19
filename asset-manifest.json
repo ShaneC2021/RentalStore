@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/RentalStore/static/css/main.f46bc8fc.css",
-    "main.js": "/RentalStore/static/js/main.8132b25f.js",
+    "main.css": "/RentalStore/static/css/main.0ebed75b.css",
+    "main.js": "/RentalStore/static/js/main.5652a20a.js",
     "static/media/main18.jpg": "/RentalStore/static/media/main18.649901490923d27f0b3a.jpg",
     "static/media/main25.jpg": "/RentalStore/static/media/main25.4bc2ebed74edb8fbbc6a.jpg",
     "static/media/main19.jpg": "/RentalStore/static/media/main19.ba5e7e346861ed8076b7.jpg",
@@ -12,7 +12,7 @@
     "static/media/main3.jpg": "/RentalStore/static/media/main3.c670981a257f091e736b.jpg",
     "static/media/main26.jpg": "/RentalStore/static/media/main26.521852b990002a471ac4.jpg",
     "static/media/main33.jpg": "/RentalStore/static/media/main33.a32ef973ef61d01a5c0b.jpg",
-    "static/media/fleet7.jpg": "/RentalStore/static/media/fleet7.b9d6ab1d075a66d2591f.jpg",
+    "static/media/100.jpg": "/RentalStore/static/media/100.b9d6ab1d075a66d2591f.jpg",
     "static/media/fleet5.png": "/RentalStore/static/media/fleet5.7718485f9786cbc69a14.png",
     "static/media/fip5u3yoew2tne2oysau.jpg": "/RentalStore/static/media/fip5u3yoew2tne2oysau.c00ecf12bf14950658b2.jpg",
     "static/media/main30.jpg": "/RentalStore/static/media/main30.c0492c9f9c8d14a62e67.jpg",
@@ -20,6 +20,7 @@
     "static/media/fleet2.jpg": "/RentalStore/static/media/fleet2.d5fb7955192aa2b54faf.jpg",
     "static/media/campervan.jpg": "/RentalStore/static/media/campervan.3f5f87a4f9d876306ae6.jpg",
     "static/media/fleet4.jpg": "/RentalStore/static/media/fleet4.0664c59b6043b5e0e320.jpg",
+    "static/media/fleet7.jpg": "/RentalStore/static/media/fleet7.16e08dc71e3408b52c90.jpg",
     "static/media/fleet6.jpg": "/RentalStore/static/media/fleet6.5b5ce9c7460decc35694.jpg",
     "static/media/fleet0.jpg": "/RentalStore/static/media/fleet0.f32a9bb2659c92e7c037.jpg",
     "static/media/fleet3.jpg": "/RentalStore/static/media/fleet3.27cb0deead9f74d64570.jpg",
@@ -33,11 +34,11 @@
     "static/media/main22.jpg": "/RentalStore/static/media/main22.f39b032d5f62a8d28514.jpg",
     "static/media/kevin-schmid-grs8iMGqQE-unsplash-300x200.jpg": "/RentalStore/static/media/kevin-schmid-grs8iMGqQE-unsplash-300x200.da7fb316073fda3b0a16.jpg",
     "index.html": "/RentalStore/index.html",
-    "main.f46bc8fc.css.map": "/RentalStore/static/css/main.f46bc8fc.css.map",
-    "main.8132b25f.js.map": "/RentalStore/static/js/main.8132b25f.js.map"
+    "main.0ebed75b.css.map": "/RentalStore/static/css/main.0ebed75b.css.map",
+    "main.5652a20a.js.map": "/RentalStore/static/js/main.5652a20a.js.map"
   },
   "entrypoints": [
-    "static/css/main.f46bc8fc.css",
-    "static/js/main.8132b25f.js"
+    "static/css/main.0ebed75b.css",
+    "static/js/main.5652a20a.js"
   ]
 }
