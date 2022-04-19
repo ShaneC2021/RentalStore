@@ -6,7 +6,7 @@ import { Row, Button, Col } from "react-bootstrap";
 function RentStageOne(props) {
   return (
     <div className="bg-light p-1">
-      <Form onSubmit={props.onSubmit}> 
+      <Form onSubmit={props.onSubmit}>
         <Row className="m-0 ">
           <Col xs={12} sm={12} lg={6}>
             <Form.Label>Pickup Date: </Form.Label>
@@ -22,7 +22,7 @@ function RentStageOne(props) {
             />
           </Col>
 
-          <Col xs={12} sm={12} lg={6}>
+          <Col xs={12} sm={12} lg={6} >
             <Form.Label>Drop Off Date: </Form.Label>
           </Col>
           <Col xs={12} sm={12} lg={6}>
@@ -30,7 +30,7 @@ function RentStageOne(props) {
               type="date"
               name="dropOffDate"
               size="sm"
-              min={props.data.pickUpDate}   // stops user selecting a dropoff date prior to pickup date
+              min={props.data.pickUpDate} // stops user selecting a dropoff date prior to pickup date
               onChange={props.handleStateChange}
               required
             />
@@ -70,14 +70,7 @@ function RentStageOne(props) {
         <Row className="m-0">
           <Col>
             <div className="d-grid gap-2 p-2">
-              <Button
-                variant="primary"
-                size="lg"
-                type="submit"
-                
-                
-                
-              >
+              <Button variant="primary" size="lg" type="submit">
                 Next
               </Button>
             </div>
@@ -87,6 +80,5 @@ function RentStageOne(props) {
     </div>
   );
 }
-
 
 export default RentStageOne;

@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import VehicleCard from "../components/VehicleCard";
 import Footer from "../components/Footer";
@@ -6,9 +6,16 @@ import RentStageOne from "../components/RentStageOne";
 import { useLocation } from "react-router-dom";
 import RentStageTwo from "../components/RentStageTwo";
 
+
+
+
+
+
 function Rent() {
   const location = useLocation();
   const item = location.state.vcard.vehicle;
+  
+  
 
   // sets page to component to be displayed
   const [currentPage, setCurrentPage] = useState(0);
@@ -94,11 +101,14 @@ function Rent() {
 
       case 1:
         return (
+          
           <RentStageTwo
             data={state}
             handleChangeStage={handleChangeStage}
             handleStateChange={handleStateChange}
             van={item}
+            currentDate={currentDate}
+            
           />
         );
 
@@ -114,15 +124,15 @@ function Rent() {
         <Row className="m-0 p-0">
           <Col xs={12} sm={12} md={4} lg={4}></Col>
           <Col xs={12} sm={12} md={4} lg={4} className="m-0 p-0">
-            <div className="m-0">
+            <div className="p-4">
               <VehicleCard obj={item} />
             </div>
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}></Col>
         </Row>
-        <Row className="m-0">
-          <Col xs={12} sm={12} md={4} lg={4}></Col>
-          <Col xs={12} sm={12} md={4} lg={4} className="p-0" >
+        <Row>
+          <Col xs={12} sm={12} md={4} lg={4} ></Col>
+          <Col xs={12} sm={12} md={4} lg={4} className="p-4" >
             <div>{renderCurrentPage()}</div>
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}></Col>

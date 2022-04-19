@@ -4,11 +4,11 @@ import { Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 export default function RentPagetwo(props) {
 
   const { pickUpDate, dropOffDate, rentalDuration, rentalFee } = props.data;
   const receiptDetails = props.data;
-
   let navigate = useNavigate();
 
   const [success, setSuccess] = useState(false);
@@ -59,9 +59,10 @@ export default function RentPagetwo(props) {
       let receiptInfo = {
         details: receiptDetails,
         order: data.orderID,
+        date: props.currentDate,
+        vehicle: props.van
       };
 
-      console.log(data.orderID);
       alert("Transaction completed by " + details.payer.name.given_name);
       setSuccess(true);
       navigate("/RentalStore/Receipt", { state: { receiptInfo } });

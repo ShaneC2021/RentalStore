@@ -9,7 +9,6 @@ import { Routes, Route } from "react-router-dom";
 import Receipt from "./pages/Receipt";
 
 
-
 function App() {
   return (
     <div className="">
