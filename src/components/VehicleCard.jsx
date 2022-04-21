@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 
 function VehicleCard(props) {
   const vehicle = props.obj;
-
+//width="243"
+//height="160"
   return (
     <Card>
       <Card.Img
-        variant="top"
-        width="243"
-        height="160"
+        variant="top"   
+        width="243" 
+        height="150"
         src={require(`../images/${vehicle.image}`)}
         alt="pic of van"
       />

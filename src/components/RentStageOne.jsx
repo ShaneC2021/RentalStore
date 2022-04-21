@@ -2,8 +2,21 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import FormField from "../components/FormField";
 import { Row, Button, Col } from "react-bootstrap";
+import { useLocalStorage } from "../scripts/useLocalStorage";
+import { useState, useEffect } from "react";
+
 
 function RentStageOne(props) {
+
+
+  
+
+
+
+
+
+
+
   return (
     <div className="bg-light p-1">
       <Form onSubmit={props.onSubmit}>

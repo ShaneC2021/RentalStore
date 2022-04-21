@@ -4,6 +4,7 @@ import VehicleCard from "../components/VehicleCard";
 import Footer from "../components/Footer";
 import RentStageOne from "../components/RentStageOne";
 import { useLocation } from "react-router-dom";
+import {useEffect } from "react";
 import RentStageTwo from "../components/RentStageTwo";
 
 
@@ -14,6 +15,8 @@ import RentStageTwo from "../components/RentStageTwo";
 function Rent() {
   const location = useLocation();
   const item = location.state.vcard.vehicle;
+  const vehicleId = item.vehicle;
+
   
   
 
@@ -31,6 +34,27 @@ function Rent() {
     }
 
   const [state, setState] = useState(initialState);
+
+//
+  
+function getStorageValue(key, defaultValue) {
+
+  const saved = localStorage.getItem(key);
+  const initial = JSON.parse(saved);
+  console.log(initial);
+  return initial || defaultValue;
+  
+
+}
+getStorageValue(vehicleId,"nothingto see here");
+
+  // stores rental dates on local storage to assist with preventing double bookings
+
+ useEffect(()=>{
+   localStorage.setItem(vehicleId,JSON.stringify([state.pickUpDate,state.dropOffDate]))
+  },[state.pickUpDate,state.dropOffDate]);
+ 
+  //
 
   const handleStateChange = e => {
     const{ name, value} = e.target;
@@ -83,6 +107,12 @@ function Rent() {
       rentalDuration: timeSpanDays,
     });
   };
+
+
+
+
+
+
   
   const renderCurrentPage = () => {
     switch (currentPage) {
@@ -95,6 +125,7 @@ function Rent() {
             handleStateChange={handleStateChange}
             calculateRentalFee={calculateRentalFee}
             currentDate={currentDate}
+            
             
           />
         );

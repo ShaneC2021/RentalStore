@@ -8,6 +8,7 @@ const arrayOfVans = [
     endDate:" ",
     cost: 150,
     image: "fleet6.jpg",
+    vehicle:"vehicle_1"
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const arrayOfVans = [
     endDate:" ",
     cost: 80,
     image: "fleet1.jpg",
+    vehicle:"vehicle_2"
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const arrayOfVans = [
     endDate:" ",
     cost: 100,
     image: "fleet2.jpg",
+    vehicle:"vehicle_3"
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ const arrayOfVans = [
     endDate:" ",
     cost: 125,
     image: "fleet5.png",
+    vehicle:"vehicle_4"
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ const arrayOfVans = [
     endDate:" ",
     cost: 50,
     image: "fleet5.jpg",
+    vehicle:"vehicle_5"
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ const arrayOfVans = [
     endDate:" ",
     cost: 125,
     image: "fleet7.jpg",
+    vehicle:"vehicle_6"
   },
 ];
  export default arrayOfVans ;
