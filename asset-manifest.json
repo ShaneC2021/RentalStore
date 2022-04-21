@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "/RentalStore/static/css/main.0ebed75b.css",
-    "main.js": "/RentalStore/static/js/main.66b76a57.js",
+    "main.css": "/RentalStore/static/css/main.e840c3f1.css",
+    "main.js": "/RentalStore/static/js/main.774ff351.js",
     "static/media/main18.jpg": "/RentalStore/static/media/main18.649901490923d27f0b3a.jpg",
     "static/media/main25.jpg": "/RentalStore/static/media/main25.4bc2ebed74edb8fbbc6a.jpg",
     "static/media/main19.jpg": "/RentalStore/static/media/main19.ba5e7e346861ed8076b7.jpg",
     "static/media/main17.jpg": "/RentalStore/static/media/main17.cc464e50f32bcf16752e.jpg",
     "static/media/main16.jpg": "/RentalStore/static/media/main16.277de9a0ffe7508e02b7.jpg",
-    "static/media/main2.jpg": "/RentalStore/static/media/main2.6dfc27b74c0b25c63691.jpg",
     "static/media/main15.jpg": "/RentalStore/static/media/main15.277254017ab7300c647e.jpg",
+    "static/media/main122.jpg": "/RentalStore/static/media/main122.1e9a8405ad725e92bb1d.jpg",
+    "static/media/main128.jpg": "/RentalStore/static/media/main128.2b613bf96a69f8eb3d00.jpg",
+    "static/media/main121.jpg": "/RentalStore/static/media/main121.28d932fc7d6484817763.jpg",
+    "static/media/205.jpg": "/RentalStore/static/media/205.c4e5da93eb608938cc31.jpg",
+    "static/media/main200.jpg": "/RentalStore/static/media/main200.cec2a678c354499e3500.jpg",
     "static/media/main3.jpg": "/RentalStore/static/media/main3.c670981a257f091e736b.jpg",
+    "static/media/main129.jpg": "/RentalStore/static/media/main129.01cad760f1343400d747.jpg",
+    "static/media/main125.jpg": "/RentalStore/static/media/main125.e1b5c7b122f37ddfaa9d.jpg",
     "static/media/main26.jpg": "/RentalStore/static/media/main26.521852b990002a471ac4.jpg",
+    "static/media/main201.jpg": "/RentalStore/static/media/main201.be764e6add171b24af4a.jpg",
     "static/media/main33.jpg": "/RentalStore/static/media/main33.a32ef973ef61d01a5c0b.jpg",
+    "static/media/main2.jpg": "/RentalStore/static/media/main2.53a65d607994ef6d0a76.jpg",
     "static/media/100.jpg": "/RentalStore/static/media/100.b9d6ab1d075a66d2591f.jpg",
     "static/media/fleet5.png": "/RentalStore/static/media/fleet5.7718485f9786cbc69a14.png",
     "static/media/fip5u3yoew2tne2oysau.jpg": "/RentalStore/static/media/fip5u3yoew2tne2oysau.c00ecf12bf14950658b2.jpg",
@@ -34,11 +42,11 @@
     "static/media/main22.jpg": "/RentalStore/static/media/main22.f39b032d5f62a8d28514.jpg",
     "static/media/kevin-schmid-grs8iMGqQE-unsplash-300x200.jpg": "/RentalStore/static/media/kevin-schmid-grs8iMGqQE-unsplash-300x200.da7fb316073fda3b0a16.jpg",
     "index.html": "/RentalStore/index.html",
-    "main.0ebed75b.css.map": "/RentalStore/static/css/main.0ebed75b.css.map",
-    "main.66b76a57.js.map": "/RentalStore/static/js/main.66b76a57.js.map"
+    "main.e840c3f1.css.map": "/RentalStore/static/css/main.e840c3f1.css.map",
+    "main.774ff351.js.map": "/RentalStore/static/js/main.774ff351.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ebed75b.css",
-    "static/js/main.66b76a57.js"
+    "static/css/main.e840c3f1.css",
+    "static/js/main.774ff351.js"
   ]
 }
