@@ -13,7 +13,7 @@ function Fleet() {
 
   return (<>
     <div className=" main-body-fleet body-color d-flex align-items-center justify-content-center">
-      <Row xs={1} sm={2} md={2} lg={6} className="g-1 ">
+      <Row xs={1} sm={3} md={3} lg={6} className="g-1 ">
         {array.map((item, idx) => (
       
           <Col key={idx}>

@@ -83,7 +83,7 @@ function RentStageOne(props) {
         <Row className="m-0">
           <Col>
             <div className="d-grid gap-2 p-2">
-              <Button variant="primary" size="lg" type="submit">
+              <Button disabled={props.enableButton} variant="primary" size="lg" type="submit">
                 Next
               </Button>
             </div>

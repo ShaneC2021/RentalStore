@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Error from "./Error";
 
 function VehicleCard(props) {
   const vehicle = props.obj;
@@ -21,6 +22,7 @@ function VehicleCard(props) {
           {vehicle.description}
           <br />
           {vehicle.price}
+  
         </Card.Text>
 
         {props.showButton? (

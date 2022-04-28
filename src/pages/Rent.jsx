@@ -4,64 +4,91 @@ import VehicleCard from "../components/VehicleCard";
 import Footer from "../components/Footer";
 import RentStageOne from "../components/RentStageOne";
 import { useLocation } from "react-router-dom";
-import {useEffect } from "react";
+import { useEffect } from "react";
 import RentStageTwo from "../components/RentStageTwo";
-
-
-
-
-
+import formatDate from "../scripts/utilities";
 
 function Rent() {
   const location = useLocation();
   const item = location.state.vcard.vehicle;
   const vehicleId = item.vehicle;
 
-  
-  
+  // set button to enable
 
   // sets page to component to be displayed
   const [currentPage, setCurrentPage] = useState(0);
- 
+
   // object contains customer details
-  const initialState = 
-    {
-      firstName: "",
-      lastName: "",
-      pickUpDate: "",
-      dropOffDate: "",
-      age: ""
-    }
+  const initialState = {
+    firstName: "",
+    lastName: "",
+    pickUpDate: "",
+    dropOffDate: "",
+    age: "",
+  };
 
   const [state, setState] = useState(initialState);
 
-//
-  
-function getStorageValue(key, defaultValue) {
-
-  const saved = localStorage.getItem(key);
-  const initial = JSON.parse(saved);
-  console.log(initial);
-  return initial || defaultValue;
-  
-
-}
-getStorageValue(vehicleId,"nothingto see here");
-
-  // stores rental dates on local storage to assist with preventing double bookings
-
- useEffect(()=>{
-   localStorage.setItem(vehicleId,JSON.stringify([state.pickUpDate,state.dropOffDate]))
-  },[state.pickUpDate,state.dropOffDate]);
- 
   //
 
-  const handleStateChange = e => {
-    const{ name, value} = e.target;
+  function getStorageValue(key) {
+    const saved = localStorage.getItem(key);
+    const initial = JSON.parse(saved || "[]");
+    return initial;
+  }
 
-    setState(prevState =>({
-      ...prevState, 
-      [name]:value}));
+  const dates = getStorageValue(vehicleId);
+
+  function unavailablePeriod(storedDates) {
+
+    let pickUpGood = true;
+    let dropOffGood = true;
+    if (storedDates.length) {
+      for (const dates of storedDates) {
+        const oldPickUp = dates.pickUp;
+        const oldDropOff = dates.dropOff;
+        let storedPickup = new Date(oldPickUp).getTime();
+        let storedDropOff = new Date(oldDropOff).getTime();
+       
+        
+
+        const newPickUp = new Date(state.pickUpDate);
+        const newDropOff = new Date(state.dropOffDate);
+
+        if (state.pickUpDate === "" || state.dropOffDate === "") {
+          return true;
+        }
+
+        if (newPickUp >= storedPickup && newPickUp <= storedDropOff) {
+          pickUpGood = false;
+          console.log("unavailable for pickup during this period");
+        }
+
+        if (newDropOff >= storedPickup && newDropOff <= storedDropOff) {
+          dropOffGood = false;
+          console.log("unavailable for dropoff during this period");
+        }
+
+        if (pickUpGood === true && dropOffGood === true) {
+          console.log("dates are good");
+        }
+      }
+    
+    return !(pickUpGood && dropOffGood);
+  }
+  else 
+  return false;
+  }
+
+  unavailablePeriod(dates);
+
+  const handleStateChange = (e) => {
+    const { name, value } = e.target;
+
+    setState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const handleChangeStage = (pageId) => {
@@ -73,19 +100,8 @@ getStorageValue(vehicleId,"nothingto see here");
     e.preventDefault();
     handleChangeStage(1);
     calculateRentalFee();
-  }
+  };
 
-  function formatDate() {
-    let d = new Date(),
-      month = "" + (d.getMonth() + 1),
-      day = "" + d.getDate(),
-      year = d.getFullYear();
-
-    if (month.length < 2) month = "0" + month;
-    if (day.length < 2) day = "0" + day;
-
-    return [year, month, day].join("-");
-  }
   const currentDate = formatDate();
 
   const calculateRentalFee = () => {
@@ -94,7 +110,6 @@ getStorageValue(vehicleId,"nothingto see here");
     const timeSpan = date2.getTime() - date1.getTime();
     let timeSpanDays = timeSpan / (1000 * 3600 * 24);
     let rentalCost = null;
-
 
     if (timeSpan === 0) {
       rentalCost = item.cost;
@@ -108,12 +123,6 @@ getStorageValue(vehicleId,"nothingto see here");
     });
   };
 
-
-
-
-
-
-  
   const renderCurrentPage = () => {
     switch (currentPage) {
       case 0:
@@ -125,21 +134,18 @@ getStorageValue(vehicleId,"nothingto see here");
             handleStateChange={handleStateChange}
             calculateRentalFee={calculateRentalFee}
             currentDate={currentDate}
-            
-            
+            enableButton={unavailablePeriod(dates)}
           />
         );
 
       case 1:
         return (
-          
           <RentStageTwo
             data={state}
             handleChangeStage={handleChangeStage}
             handleStateChange={handleStateChange}
             van={item}
             currentDate={currentDate}
-            
           />
         );
 
@@ -152,30 +158,28 @@ getStorageValue(vehicleId,"nothingto see here");
     <>
       <div className="main-body body-color d-flex flex-column justify-content-center">
         <div>
-        <Row className="m-0 p-0">
-          <Col xs={12} sm={12} md={4} lg={4}></Col>
-          <Col xs={12} sm={12} md={4} lg={4} className="m-0 p-0">
-            <div className="p-4">
-              <VehicleCard obj={item} />
-            </div>
-          </Col>
-          <Col xs={12} sm={12} md={4} lg={4}></Col>
-        </Row>
-        <Row className="m-0">
-          <Col xs={12} sm={12} md={4} lg={4} ></Col>
-          <Col xs={12} sm={12} md={4} lg={4} className="p-4" >
-            <div>{renderCurrentPage()}</div>
-          </Col>
-          <Col xs={12} sm={12} md={4} lg={4}></Col>
-        </Row></div>
-        
+          <Row className="m-0 p-0">
+            <Col xs={12} sm={12} md={4} lg={4}></Col>
+            <Col xs={12} sm={12} md={4} lg={4} className="m-0 p-0">
+              <div className="p-4">
+                <VehicleCard obj={item} />
+              </div>
+            </Col>
+            <Col xs={12} sm={12} md={4} lg={4}></Col>
+          </Row>
+          <Row className="m-0">
+            <Col xs={12} sm={12} md={4} lg={4}></Col>
+            <Col xs={12} sm={12} md={4} lg={4} className="p-4">
+              <div>{renderCurrentPage()}</div>
+            </Col>
+            <Col xs={12} sm={12} md={4} lg={4}></Col>
+          </Row>
+        </div>
       </div>
 
       <Footer />
     </>
   );
 }
-
-
 
 export default Rent;

@@ -5,10 +5,36 @@ import Table from "react-bootstrap/Table";
 import VehicleCard from "../components/VehicleCard";
 import { Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import { useEffect } from "react" 
 
 function Receipt() {
   const location = useLocation();
   const { receiptInfo } = location.state;
+
+
+ let vehicleId = receiptInfo.vehicle.vehicle;
+ 
+
+ function getStorageValue(key) {
+  const saved = localStorage.getItem(key);
+  const initial = JSON.parse((saved)||"[]");
+  return initial;
+}
+const vehicleSchedule = getStorageValue(vehicleId);
+
+const newSchedule = [...vehicleSchedule];
+newSchedule.push({pickUp: receiptInfo.details.pickUpDate, dropOff: receiptInfo.details.dropOffDate});
+console.log(newSchedule);
+
+
+useEffect( () => {
+
+   localStorage.setItem(vehicleId,JSON.stringify(newSchedule));
+  },[]);
+
+
+  
+ 
   return (
     <>
       <div className="main-body d-flex justify-content-center align-items-center body-color">
