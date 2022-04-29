@@ -40,7 +40,6 @@ function Rent() {
   const dates = getStorageValue(vehicleId);
 
   function unavailablePeriod(storedDates) {
-
     let pickUpGood = true;
     let dropOffGood = true;
     if (storedDates.length) {
@@ -49,9 +48,6 @@ function Rent() {
         const oldDropOff = dates.dropOff;
         let storedPickup = new Date(oldPickUp).getTime();
         let storedDropOff = new Date(oldDropOff).getTime();
-       
-        
-
         const newPickUp = new Date(state.pickUpDate);
         const newDropOff = new Date(state.dropOffDate);
 
@@ -69,15 +65,17 @@ function Rent() {
           console.log("unavailable for dropoff during this period");
         }
 
-        if (pickUpGood === true && dropOffGood === true) {
-          console.log("dates are good");
+        if (!pickUpGood || !dropOffGood) {
+          console.log("dates arent  good");
+          return true;
         }
       }
-    
-    return !(pickUpGood && dropOffGood);
-  }
-  else 
-  return false;
+    }
+    if (
+      !storedDates.length &&
+      (state.pickUpDate === "" || state.dropOffDate === "")
+    )
+      return true;
   }
 
   unavailablePeriod(dates);
