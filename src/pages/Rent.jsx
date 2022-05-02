@@ -4,7 +4,6 @@ import VehicleCard from "../components/VehicleCard";
 import Footer from "../components/Footer";
 import RentStageOne from "../components/RentStageOne";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import RentStageTwo from "../components/RentStageTwo";
 import formatDate from "../scripts/utilities";
 
@@ -40,20 +39,27 @@ function Rent() {
   const dates = getStorageValue(vehicleId);
 
   function unavailablePeriod(storedDates) {
+
+    const newPickUp = new Date(state.pickUpDate);
+    const newDropOff = new Date(state.dropOffDate);
+
     let pickUpGood = true;
     let dropOffGood = true;
+
+   if (state.pickUpDate === "" || state.dropOffDate === "")
+    {
+      return true;
+    }
+
     if (storedDates.length) {
       for (const dates of storedDates) {
         const oldPickUp = dates.pickUp;
         const oldDropOff = dates.dropOff;
-        let storedPickup = new Date(oldPickUp).getTime();
-        let storedDropOff = new Date(oldDropOff).getTime();
-        const newPickUp = new Date(state.pickUpDate);
-        const newDropOff = new Date(state.dropOffDate);
+        const storedPickup = new Date(oldPickUp).getTime();
+        const storedDropOff = new Date(oldDropOff).getTime();
+        
 
-        if (state.pickUpDate === "" || state.dropOffDate === "") {
-          return true;
-        }
+        
 
         if (newPickUp >= storedPickup && newPickUp <= storedDropOff) {
           pickUpGood = false;
@@ -62,7 +68,13 @@ function Rent() {
 
         if (newDropOff >= storedPickup && newDropOff <= storedDropOff) {
           dropOffGood = false;
-          console.log("unavailable for dropoff during this period");
+          console.log(" dropoff  overlaps date booked by another client during this period try returning vehicle sooner");
+        }
+
+        if(newPickUp <= storedPickup && newDropOff >= storedDropOff){
+          pickUpGood = false;
+          dropOffGood = false;
+          console.log("vehicle already rented during this period");
         }
 
         if (!pickUpGood || !dropOffGood) {
@@ -71,14 +83,11 @@ function Rent() {
         }
       }
     }
-    if (
-      !storedDates.length &&
-      (state.pickUpDate === "" || state.dropOffDate === "")
-    )
-      return true;
+    
+      return false;
   }
 
-  unavailablePeriod(dates);
+  
 
   const handleStateChange = (e) => {
     const { name, value } = e.target;

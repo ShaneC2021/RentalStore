@@ -2,20 +2,12 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import FormField from "../components/FormField";
 import { Row, Button, Col } from "react-bootstrap";
-import { useLocalStorage } from "../scripts/useLocalStorage";
-import { useState, useEffect } from "react";
-
 
 function RentStageOne(props) {
-
-
-  
-
-
-
-
-
-
+  const invalidDates = props.enableButton;
+  const invalidDatesError = invalidDates
+    ? "Vehicle is unavailable for those dates"
+    : undefined;
 
   return (
     <div className="bg-light p-1">
@@ -32,10 +24,14 @@ function RentStageOne(props) {
               min={props.currentDate}
               onChange={props.handleStateChange}
               required
+              isInvalid={invalidDates}
             />
+            <Form.Control.Feedback type="invalid">
+              {invalidDatesError}
+            </Form.Control.Feedback>
           </Col>
 
-          <Col xs={12} sm={12} lg={6} >
+          <Col xs={12} sm={12} lg={6}>
             <Form.Label>Drop Off Date: </Form.Label>
           </Col>
           <Col xs={12} sm={12} lg={6}>
@@ -46,7 +42,11 @@ function RentStageOne(props) {
               min={props.data.pickUpDate} // stops user selecting a dropoff date prior to pickup date
               onChange={props.handleStateChange}
               required
+              isInvalid={invalidDates}
             />
+            <Form.Control.Feedback type="invalid">
+              {invalidDatesError}
+            </Form.Control.Feedback>
           </Col>
         </Row>
 
@@ -83,7 +83,12 @@ function RentStageOne(props) {
         <Row className="m-0">
           <Col>
             <div className="d-grid gap-2 p-2">
-              <Button disabled={props.enableButton} variant="primary" size="lg" type="submit">
+              <Button
+                disabled={props.enableButton}
+                variant="primary"
+                size="lg"
+                type="submit"
+              >
                 Next
               </Button>
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Error from "./Error";
+
 
 function VehicleCard(props) {
   const vehicle = props.obj;
