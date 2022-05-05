@@ -12,12 +12,8 @@ function Rent() {
   const item = location.state.vcard.vehicle;
   const vehicleId = item.vehicle;
 
-  // set button to enable
-
-  // sets page to component to be displayed
   const [currentPage, setCurrentPage] = useState(0);
 
-  // object contains customer details
   const initialState = {
     firstName: "",
     lastName: "",
@@ -28,8 +24,6 @@ function Rent() {
 
   const [state, setState] = useState(initialState);
 
-  //
-
   function getStorageValue(key) {
     const saved = localStorage.getItem(key);
     const initial = JSON.parse(saved || "[]");
@@ -39,16 +33,14 @@ function Rent() {
   const dates = getStorageValue(vehicleId);
 
   function unavailablePeriod(storedDates) {
-
     const newPickUp = new Date(state.pickUpDate);
     const newDropOff = new Date(state.dropOffDate);
 
     let pickUpGood = true;
     let dropOffGood = true;
 
-   if (state.pickUpDate === "" || state.dropOffDate === "")
-    {
-      return true;
+    if (state.pickUpDate === "" || state.dropOffDate === "") {
+      return false;
     }
 
     if (storedDates.length) {
@@ -57,37 +49,28 @@ function Rent() {
         const oldDropOff = dates.dropOff;
         const storedPickup = new Date(oldPickUp).getTime();
         const storedDropOff = new Date(oldDropOff).getTime();
-        
-
-        
 
         if (newPickUp >= storedPickup && newPickUp <= storedDropOff) {
           pickUpGood = false;
-          console.log("unavailable for pickup during this period");
         }
 
         if (newDropOff >= storedPickup && newDropOff <= storedDropOff) {
           dropOffGood = false;
-          console.log(" dropoff  overlaps date booked by another client during this period try returning vehicle sooner");
         }
 
-        if(newPickUp <= storedPickup && newDropOff >= storedDropOff){
+        if (newPickUp <= storedPickup && newDropOff >= storedDropOff) {
           pickUpGood = false;
           dropOffGood = false;
-          console.log("vehicle already rented during this period");
         }
 
         if (!pickUpGood || !dropOffGood) {
-          console.log("dates arent  good");
           return true;
         }
       }
     }
-    
-      return false;
-  }
 
-  
+    return false;
+  }
 
   const handleStateChange = (e) => {
     const { name, value } = e.target;
@@ -102,7 +85,6 @@ function Rent() {
     setCurrentPage(pageId);
   };
 
-  //new
   const handleSubmit = (e) => {
     e.preventDefault();
     handleChangeStage(1);

@@ -6,7 +6,7 @@ import { Row, Button, Col } from "react-bootstrap";
 function RentStageOne(props) {
   const invalidDates = props.enableButton;
   const invalidDatesError = invalidDates
-    ? "Vehicle is unavailable for those dates"
+    ? "Vehicle is unavailable during this period"
     : undefined;
 
   return (
@@ -25,6 +25,7 @@ function RentStageOne(props) {
               onChange={props.handleStateChange}
               required
               isInvalid={invalidDates}
+              className="m-1"
             />
             <Form.Control.Feedback type="invalid">
               {invalidDatesError}
@@ -43,6 +44,7 @@ function RentStageOne(props) {
               onChange={props.handleStateChange}
               required
               isInvalid={invalidDates}
+              className="m-1"
             />
             <Form.Control.Feedback type="invalid">
               {invalidDatesError}

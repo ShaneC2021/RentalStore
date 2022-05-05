@@ -24,7 +24,6 @@ const vehicleSchedule = getStorageValue(vehicleId);
 
 const newSchedule = [...vehicleSchedule];
 newSchedule.push({pickUp: receiptInfo.details.pickUpDate, dropOff: receiptInfo.details.dropOffDate});
-console.log(newSchedule);
 
 
 useEffect( () => {

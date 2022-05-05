@@ -12,11 +12,10 @@ export default function RentPagetwo(props) {
   let navigate = useNavigate();
 
   const [success, setSuccess] = useState(false);
-  const [ErrorMessage, setErrorMessage] = useState("");
-  const [orderID, setOrderID] = useState(false);
+ // const [orderID, setOrderID] = useState(false);
 
-  // creates a paypal order
-  const createOrder = (data, actions) => {
+  
+  const createOrder = ( data, actions) => {
     return actions.order
       .create({
         purchase_units: [
@@ -28,21 +27,19 @@ export default function RentPagetwo(props) {
             },
           },
         ],
-        // not needed if a shipping address is actually needed
+      
         application_context: {
           shipping_preference: "NO_SHIPPING",
         },
       })
-      .then((orderID) => {
-        setOrderID(orderID);
-        return orderID;
-      });
+      
+   //   .then((orderID) => {
+   //     setOrderID(orderID);
+   //     return orderID;
+   //   });
   };
 
-  //capture likely error
-  const onError = (data, actions) => {
-    setErrorMessage("An Error occured with your payment ");
-  };
+  
 
   useEffect(() => {
     if (success) {
@@ -50,11 +47,9 @@ export default function RentPagetwo(props) {
     }
   }, [success]);
 
-  // Paypal dependencies */
 
-  // check Approval
   const onApprove = (data, actions) => {
-    return actions.order.capture().then(function (details) {
+    return actions.order.capture().then(function () {
       // This function shows a transaction success message to your buyer.
       let receiptInfo = {
         details: receiptDetails,
@@ -63,11 +58,16 @@ export default function RentPagetwo(props) {
         vehicle: props.van
       };
 
-      alert("Transaction completed by " + details.payer.name.given_name);
+     // alert("Transaction completed by " + details.payer.name.given_name);
       setSuccess(true);
       navigate("/RentalStore/Receipt", { state: { receiptInfo } });
     });
   };
+
+
+
+
+  
 
   return (
     <>
@@ -101,9 +101,12 @@ export default function RentPagetwo(props) {
             options={{ "client-id": process.env.REACT_APP_CLIENT_ID }}
           >
             <PayPalButtons createOrder={createOrder} onApprove={onApprove} />
+           
           </PayPalScriptProvider>
         </div>
       </div>
     </>
   );
 }
+
+
