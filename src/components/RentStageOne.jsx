@@ -88,7 +88,7 @@ function RentStageOne(props) {
               <Button
                 disabled={props.enableButton}
                 variant="primary"
-                size="lg"
+                size="sm"
                 type="submit"
               >
                 Next

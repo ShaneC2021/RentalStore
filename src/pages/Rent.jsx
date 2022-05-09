@@ -147,22 +147,25 @@ function Rent() {
     <>
       <div className="main-body body-color d-flex flex-column justify-content-center">
         <div>
-          <Row className="m-0 p-0">
-            <Col xs={12} sm={12} md={4} lg={4}></Col>
-            <Col xs={12} sm={12} md={4} lg={4} className="m-0 p-0">
-              <div className="p-4">
-                <VehicleCard obj={item} />
-              </div>
-            </Col>
-            <Col xs={12} sm={12} md={4} lg={4}></Col>
-          </Row>
-          <Row className="m-0">
-            <Col xs={12} sm={12} md={4} lg={4}></Col>
-            <Col xs={12} sm={12} md={4} lg={4} className="p-4">
-              <div>{renderCurrentPage()}</div>
-            </Col>
-            <Col xs={12} sm={12} md={4} lg={4}></Col>
-          </Row>
+          
+<Row className="m-0 p-0">
+<Col xs={12} sm={2} md={3} lg={3}></Col>
+<Col xs={12} sm={8} md={6} lg={6} className="m-0 p-0">
+  <div className="p-4 ">
+    <VehicleCard obj={item} />
+  </div>
+</Col>
+<Col xs={12} sm={2} md={3} lg={3}></Col>
+</Row>
+
+<Row className="m-0 p-0">
+<Col xs={12} sm={2} md={3} lg={3}></Col>
+<Col xs={12} sm={8} md={6} lg={6} className="p-4">
+  <div>{renderCurrentPage()}</div>
+</Col>
+<Col xs={12} sm={2} md={3} lg={3}></Col>
+</Row>  
+          
         </div>
       </div>
 
@@ -172,3 +175,4 @@ function Rent() {
 }
 
 export default Rent;
+

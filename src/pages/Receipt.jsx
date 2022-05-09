@@ -6,6 +6,7 @@ import VehicleCard from "../components/VehicleCard";
 import { Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useEffect } from "react" 
+import { Row, Col} from "react-bootstrap"
 
 function Receipt() {
   const location = useLocation();
@@ -36,21 +37,24 @@ useEffect( () => {
  
   return (
     <>
-      <div className="main-body d-flex justify-content-center align-items-center body-color">
-        <div className="mb-2">
-          <div>
+      <div className="main-body d-flex flex-column align-items-center body-color m-0">
+        
+
+          
+          <div className="receipt-image">
             <VehicleCard obj={receiptInfo.vehicle} />
           </div>
-          <Table hover bordered className="bg-light">
+          <div className="m-0 table-holder">
+          <Table hover bordered className="bg-light table-holder" size="sm">
             <thead>
               <tr>
-                <th>Order # </th>
-                <th>{receiptInfo.order}</th>
+                <th className="w-25">Order # </th>
+                <th className="w-75">{receiptInfo.order}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Name: </td>
+                <td className="w-25">Name: </td>
                 <td>
                   {receiptInfo.details.firstName} {receiptInfo.details.lastName}
                 </td>
@@ -72,13 +76,14 @@ useEffect( () => {
               </tr>
             </tbody>
           </Table>
+          </div>
           
-        <div className="d-flex justify-content-center">
+        <div>
           <LinkContainer to="/RentalStore">
             <Button variant="secondary" size="sm">Return to Main Page</Button>
           </LinkContainer>
         </div>
-        </div>
+        
       </div>
       <Footer />
     </>
