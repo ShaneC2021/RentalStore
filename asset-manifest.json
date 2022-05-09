@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/RentalStore/static/css/main.e840c3f1.css",
-    "main.js": "/RentalStore/static/js/main.6fa7bd5e.js",
+    "main.css": "/RentalStore/static/css/main.a422aa27.css",
+    "main.js": "/RentalStore/static/js/main.6d66595d.js",
     "static/media/main18.jpg": "/RentalStore/static/media/main18.649901490923d27f0b3a.jpg",
     "static/media/main25.jpg": "/RentalStore/static/media/main25.4bc2ebed74edb8fbbc6a.jpg",
     "static/media/main19.jpg": "/RentalStore/static/media/main19.ba5e7e346861ed8076b7.jpg",
@@ -42,11 +42,11 @@
     "static/media/main22.jpg": "/RentalStore/static/media/main22.f39b032d5f62a8d28514.jpg",
     "static/media/kevin-schmid-grs8iMGqQE-unsplash-300x200.jpg": "/RentalStore/static/media/kevin-schmid-grs8iMGqQE-unsplash-300x200.da7fb316073fda3b0a16.jpg",
     "index.html": "/RentalStore/index.html",
-    "main.e840c3f1.css.map": "/RentalStore/static/css/main.e840c3f1.css.map",
-    "main.6fa7bd5e.js.map": "/RentalStore/static/js/main.6fa7bd5e.js.map"
+    "main.a422aa27.css.map": "/RentalStore/static/css/main.a422aa27.css.map",
+    "main.6d66595d.js.map": "/RentalStore/static/js/main.6d66595d.js.map"
   },
   "entrypoints": [
-    "static/css/main.e840c3f1.css",
-    "static/js/main.6fa7bd5e.js"
+    "static/css/main.a422aa27.css",
+    "static/js/main.6d66595d.js"
   ]
 }
