@@ -140,3 +140,30 @@ div h6 {
 a:link {
 color: black;
 }
+
+@keyframes changeColor {
+
+
+  0%{background-color:none;}
+  
+  50%{background-color:gold;}
+  75%{background-color:hsl(60, 100%, 50%)}
+  100%{background-color:hsl(60, 100%, 50%)}
+
+}
+
+.sparkle-button {
+  animation: changeColor 5s ease-in infinite;
+  
+  
+}
+ 
+
+.attention-grabber {
+  color: rgb(14, 13, 13);
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bolder;
+  font-size: x-large;
+
+}

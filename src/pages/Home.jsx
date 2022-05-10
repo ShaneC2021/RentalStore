@@ -6,12 +6,12 @@ import { LinkContainer } from "react-router-bootstrap";
 function Home() {
   return (
     <>
-      <div className="background-logo text-center d-flex align-items-start">
-        <div className="p-1 text-secondary"> 
+      <div className="background-logo text-center d-flex align-items-start justify-content-center">
+        <div className="p-1 attention-grabber"> 
         <p>Welcome to Explore Rentals where your first step to adventure begins.</p>
         
               <LinkContainer to="/RentalStore/Fleet">
-              <Button variant="secondary" size="sm">Click here to proceed</Button>
+              <Button className="sparkle-button" variant="outline-*" >Click Here To Proceed</Button>
                 
               </LinkContainer>
               </div>
