@@ -5,46 +5,35 @@ import Table from "react-bootstrap/Table";
 import VehicleCard from "../components/VehicleCard";
 import { Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import { useEffect } from "react" 
-import { Row, Col} from "react-bootstrap"
+import { useEffect } from "react";
+import { Row, Col } from "react-bootstrap";
 
 function Receipt() {
   const location = useLocation();
   const { receiptInfo } = location.state;
 
+  let vehicleId = receiptInfo.vehicle.vehicle;
 
- let vehicleId = receiptInfo.vehicle.vehicle;
- 
+  function getStorageValue(key) {
+    const saved = localStorage.getItem(key);
+    const initial = JSON.parse(saved || "[]");
+    return initial;
+  }
+  const vehicleSchedule = getStorageValue(vehicleId);
+  const newSchedule = [...vehicleSchedule];
+  newSchedule.push({
+    pickUp: receiptInfo.details.pickUpDate,
+    dropOff: receiptInfo.details.dropOffDate,
+  });
+  localStorage.setItem(vehicleId, JSON.stringify(newSchedule));
 
- function getStorageValue(key) {
-  const saved = localStorage.getItem(key);
-  const initial = JSON.parse((saved)||"[]");
-  return initial;
-}
-const vehicleSchedule = getStorageValue(vehicleId);
-
-const newSchedule = [...vehicleSchedule];
-newSchedule.push({pickUp: receiptInfo.details.pickUpDate, dropOff: receiptInfo.details.dropOffDate});
-
-
-useEffect( () => {
-
-   localStorage.setItem(vehicleId,JSON.stringify(newSchedule));
-  },[]);
-
-
-  
- 
   return (
     <>
       <div className="main-body d-flex flex-column align-items-center body-color m-0">
-        
-
-          
-          <div className="receipt-image">
-            <VehicleCard obj={receiptInfo.vehicle} />
-          </div>
-          <div className="m-0 table-holder">
+        <div className="receipt-image">
+          <VehicleCard obj={receiptInfo.vehicle} />
+        </div>
+        <div className="m-0 table-holder">
           <Table hover bordered className="bg-light table-holder" size="sm">
             <thead>
               <tr>
@@ -76,14 +65,15 @@ useEffect( () => {
               </tr>
             </tbody>
           </Table>
-          </div>
-          
+        </div>
+
         <div>
           <LinkContainer to="/RentalStore">
-            <Button variant="secondary" size="sm">Return to Main Page</Button>
+            <Button variant="secondary" size="sm">
+              Return to Main Page
+            </Button>
           </LinkContainer>
         </div>
-        
       </div>
       <Footer />
     </>
