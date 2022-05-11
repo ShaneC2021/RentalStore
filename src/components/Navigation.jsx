@@ -2,7 +2,6 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
-
 function Navigation() {
   return (
     <Container fluid className="nav-height m-0 p-0">
@@ -11,7 +10,7 @@ function Navigation() {
         expand="sm"
         bg="dark"
         variant="dark"
-        className="nav-height"
+        className="nav-height nav-font "
       >
         <Container>
           <Navbar.Brand>
