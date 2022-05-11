@@ -94,6 +94,8 @@ code {
 
 .body-color {
   background-color:rgb(220,223,227);
+
+  background-color:#14213d;
   /*background-color: rgb(247, 244, 244);*/
 }
 
@@ -107,9 +109,11 @@ code {
 
 .footer {
   min-height: 15vh;
- /* background-color: rgb(216, 196, 196);*/
+ /* 
  background-color: rgb(33,37,41);
-color: white; 
+ background-color:#fca311;*/
+ background-color: #e5e5e5;
+color: black; 
 }
 
 
@@ -131,7 +135,7 @@ div h6 {
 }
 
 a:link {
-  color: whitesmoke;
+  color: black;
 }
 
 /*
@@ -160,7 +164,7 @@ a:link {
 
 .attention-grabber {
   color: rgb(14, 13, 13);
-  font-family: "Satisfy", cursive, 'Times New Roman', Times, serif;
+  font-family: "Satisfy", 'Times New Roman', Times, serif;
   font-style: italic;
   font-weight: bolder;
   font-size: x-large;
