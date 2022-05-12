@@ -95,7 +95,7 @@ code {
 .body-color {
   /*background-color:rgb(220,223,227);*/
 
-  background-color: #DBC39A;
+  background-color: #41474a;
   /*background-color: rgb(247, 244, 244);*/
 }
 
@@ -138,20 +138,10 @@ a:link {
   color: black;
 }
 
-/*
-@keyframes changeColor {
 
-
-  0%{background-color:rgb(74,212,219);}
-  
-  50%{background-color:gold;}
-  75%{background-color:rgb(177,241,252);}
-  100%{}
-
-}*/
 
 .sparkle-button {
-  /* animation: changeColor 5s ease-in infinite;*/
+  
   border: none;
   padding: 1rem;
   border-radius: 1rem;
@@ -174,4 +164,9 @@ a:link {
 
 .nav-font {
   font-family: "Satisfy", cursive;
+}
+
+.receipt-image {
+
+  max-width: 250px;
 }

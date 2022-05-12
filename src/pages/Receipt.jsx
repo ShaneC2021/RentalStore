@@ -33,11 +33,11 @@ function Receipt() {
         <div className="receipt-image">
           <VehicleCard obj={receiptInfo.vehicle} />
         </div>
-        <div className="m-0 table-holder">
-          <Table hover bordered className="bg-light table-holder" size="sm">
+        <div className="table-holder">
+          <Table hover className="bg-white table-holder" size="sm">
             <thead>
               <tr>
-                <th className="w-25">Order # </th>
+                <th className="w-25">Order</th>
                 <th className="w-75">{receiptInfo.order}</th>
               </tr>
             </thead>
@@ -69,7 +69,7 @@ function Receipt() {
 
         <div>
           <LinkContainer to="/RentalStore">
-            <Button variant="secondary" size="sm">
+            <Button variant="secondary" size="sm" className="mb-3">
               Return to Main Page
             </Button>
           </LinkContainer>
