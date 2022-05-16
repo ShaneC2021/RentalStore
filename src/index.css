@@ -11,7 +11,7 @@ html {
 body {
   height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -20,7 +20,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   
-  font-family: 'Satisfy', cursive;
+  font-family:  'Indie Flower', cursive;
   
 }
 
@@ -93,10 +93,8 @@ code {
 }
 
 .body-color {
-  /*background-color:rgb(220,223,227);*/
-
   background-color: #41474a;
-  /*background-color: rgb(247, 244, 244);*/
+  
 }
 
 .date-confirmation {
@@ -109,9 +107,6 @@ code {
 
 .footer {
   min-height: 15vh;
- /* 
- background-color: rgb(33,37,41);
- background-color:#fca311;*/
  background-color: #e5e5e5;
 color: black; 
 }
@@ -148,25 +143,25 @@ a:link {
 
   font-weight: bold;
   font-size: large;
-  /*background-color:rgb(74,212,219);*/
   background-color: rgb(177, 241, 252);
 }
 
 .attention-grabber {
   color: rgb(14, 13, 13);
-  font-family: "Satisfy", 'Times New Roman', Times, serif;
+  font-family:  'Indie Flower', 'Times New Roman', Times, serif;
   font-style: italic;
   font-weight: bolder;
   font-size: x-large;
 }
 
-.navbar{background-color:#FFB554}
+.navbar{
+  background-color:#FFB554
+}
 
 .nav-font {
-  font-family: "Satisfy", cursive;
+  font-family: 'Indie Flower', cursive;
 }
 
 .receipt-image {
-
   max-width: 250px;
 }

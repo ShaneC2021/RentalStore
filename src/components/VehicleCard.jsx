@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 function VehicleCard(props) {
   const vehicle = props.obj;
-  //width="243"
-  //height="160"
+ 
   return (
     <CardGroup>
       <Card>
@@ -15,7 +14,7 @@ function VehicleCard(props) {
           src={require(`../images/${vehicle.image}`)}
           alt="pic of van"
         />
-        <Card.Body className="text-center">
+        <Card.Body className="text-center nav-font">
           <Card.Title>{vehicle.name} </Card.Title>
           <Card.Text>
             {vehicle.description}<br/>

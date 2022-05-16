@@ -8,17 +8,17 @@ function Footer() {
   return (
     <Row className="footer m-0 pt-3 ">
       <Col xs={12} sm={4} md={4} lg={4}>
-        <div >
+        <div>
           <h6>Follow Us On</h6>
           <span className=" d-flex flex-column align-items-center justify-content-around m-1">
-            <Twitter className="m-1"/>
-            <Facebook className="m-1"/>
-            <Instagram className="m-1"/>
+            <Twitter className="m-1" />
+            <Facebook className="m-1" />
+            <Instagram className="m-1" />
           </span>
         </div>
       </Col>
       <Col xs={12} sm={4} md={4} lg={4}>
-        <div>
+        <div className="nav-font">
           <h6>Customer Assistance</h6>
           <div className="d-flex flex-column align-items-center">
             <p className="m-1">
@@ -36,8 +36,14 @@ function Footer() {
         </div>
       </Col>
       <Col xs={12} sm={4} md={4} lg={4}>
-        <div>
-          <h6>Resources</h6>
+        <div className="text-center">
+          <h6>Explore Rentals</h6>
+
+          <p className="nav-font">
+            1201 Wilson Blvd<br></br>
+            9th Floor<br></br>
+            Arlington, VA 22209
+          </p>
         </div>
       </Col>
     </Row>
