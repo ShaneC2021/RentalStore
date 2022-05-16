@@ -4,7 +4,7 @@ import { LinkContainer } from "react-router-bootstrap";
 
 function Navigation() {
   return (
-    <Container fluid className="nav-height m-0 p-0">
+    <Container fluid className=" m-0 p-0">
       <Navbar
         collapseOnSelect
         expand="sm"
