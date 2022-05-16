@@ -10,7 +10,7 @@ function Navigation() {
         expand="sm"
         bg="dark"
         variant="dark"
-        className="nav-height nav-font "
+        className="nav-height "
       >
         <Container>
           <Navbar.Brand>
