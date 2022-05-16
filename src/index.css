@@ -21,9 +21,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  
-  font-family:  'Indie Flower', 'Times New Roman', Times, serif;
-  
+  font-style:italic;
+  font-weight: bold;
 }
 
 code {
