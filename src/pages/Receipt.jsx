@@ -5,8 +5,7 @@ import Table from "react-bootstrap/Table";
 import VehicleCard from "../components/VehicleCard";
 import { Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import { useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
+
 
 function Receipt() {
   const location = useLocation();
